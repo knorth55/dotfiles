@@ -1,3 +1,2 @@
-*dotfiles
-.vimrc
+only .vimrc and .vim/
 

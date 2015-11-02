@@ -1,4 +1,3 @@
-"set number auto on
 set number
 
 " tab set
@@ -18,7 +17,6 @@ nmap <S-j> }
 nmap <S-k> {
 nmap <S-l> $
 nmap == gg=G''
-nmap <C-t> :tabnew<CR>
 
 " Note: Skip initialization for vim-tiny or vim-small.
 if 0 | endif
@@ -64,9 +62,6 @@ NeoBundle 'Shougo/neomru.vim'
 NeoBundle 'Shougo/vimproc'
 NeoBundle 'Shougo/vimshell'
 
-"indent coloring
-"NeoBundle 'nathanaelkane/vim-indent-guides'
-
 "yankround
 NeoBundle 'LeafCage/yankround.vim'
 
@@ -81,17 +76,17 @@ NeoBundleCheck
 
 "unite.vim settings
 let g:unite_enable_start_insert=1
-nmap <C-u><C-b> :Unite buffer<CR>
-nmap <C-u><C-f> :Unite -buffer-name=file file<CR>
-nmap <C-u><C-m> :Unite file_mru<CR>
-nmap <C-u><C-a> :UniteWithBufferDir file -buffer-name=file<CR>
+nmap ub :Unite buffer<CR>
+
+nmap uf :Unite -buffer-name=file file<CR>
+nmap up :Unite file_mru<CR>
+nmap ua :UniteWithBufferDir file -buffer-name=file<CR>
 au FileType unite nmap <silent> <buffer> <expr> <C-j> unite#do_action('split')
 au FileType unite imap <silent> <buffer> <expr> <C-j> unite#do_action('split')
 au FileType unite nmap <silent> <buffer> <expr> <C-l> unite#do_action('vsplit')
 au FileType unite imap <silent> <buffer> <expr> <C-l> unite#do_action('vsplit')
 au FileType unite nmap <silent> <buffer> <ESC><ESC> q<CR>
 au FileType unite imap <silent> <buffer> <ESC><ESC> <ESC>q<CR>
-""""""""""""""""""""""""""""""""
 
 "VimShell settings
 nmap vs :VimShell<CR>
@@ -106,8 +101,12 @@ xmap gp <Plug>(yankround-gp)
 nmap gP <Plug>(yankround-gP)
 nmap <C-p> <Plug>(yankround-prev)
 nmap <C-n> <Plug>(yankround-next)
+nmap pp :Unite yankround<CR>
+xmap pp :Unite yankround<CR>
 
 "NERDTree settings
+nmap nt :NERDTree<CR>
+nmap nc :NERDTreeClose<CR>
 
 "Lisp FileType config
 au BufNewFile,BufRead *.l set filetype=lisp

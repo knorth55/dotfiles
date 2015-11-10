@@ -110,3 +110,5 @@ nmap nc :NERDTreeClose<CR>
 
 "Lisp FileType config
 au BufNewFile,BufRead *.l set filetype=lisp
+au BufNewFile,BufRead *.launch set filetype=xml
+

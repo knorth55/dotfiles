@@ -113,6 +113,15 @@ if ! shopt -oq posix; then
   fi
 fi
 
+# share bash history 
+function share_history {
+    history -a
+    history -c
+    history -r
+}
+PROMPT_COMMAND='share_history'
+shopt -u histappend
+
 #Bash-it
 # Path to the bash it configuration
 export BASH_IT="$HOME/.bash-it"
@@ -129,3 +138,4 @@ source /opt/ros/indigo/setup.bash
 alias irteusgl="rlwrap irteusgl"
 alias roseus="rlwrap roseus"
 echo $PATH
+

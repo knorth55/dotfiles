@@ -137,11 +137,11 @@ source $BASH_IT/bash_it.sh
 source /opt/ros/indigo/setup.bash
 alias irteusgl="rlwrap irteusgl"
 alias roseus="rlwrap roseus"
-echo $PATH
 source `rospack find jsk_tools`/src/bashrc.ros
-rossetlocal
 rossetip
+rossetlocal
 
 #tmux
 alias tmux="tmux new-session"
 
+echo $PATH

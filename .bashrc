@@ -112,6 +112,8 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
+#alias completion
+source ~/.bash/alias_completion.sh
 
 # share bash history 
 function share_history {
@@ -137,9 +139,19 @@ source $BASH_IT/bash_it.sh
 source /opt/ros/indigo/setup.bash
 alias irteusgl="rlwrap irteusgl"
 alias roseus="rlwrap roseus"
+alias_completion irteusgl
+alias_completion roseus
 source `rospack find jsk_tools`/src/bashrc.ros
-rossetip
+#rossetip
 rossetlocal
+
+#ROS aliases
+alias rlc="roslaunch"
+alias rrn="rosrun"
+alias rtc="rostopic"
+alias_completion rlc
+alias_completion rrn
+alias_completion rtc 
 
 #tmux
 alias tmux="tmux new-session"

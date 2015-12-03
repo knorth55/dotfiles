@@ -71,6 +71,9 @@ NeoBundle 'Shougo/neocomplete'
 "caw
 NeoBundle 'tyru/caw.vim'
 
+" vim-scala
+NeoBundle 'derekwyatt/vim-scala'
+
 call neobundle#end()
 
 " Required:
@@ -122,10 +125,16 @@ if !exists('g:neocomplete#keyword_patterns')
     let g:neocomplete#keyword_patterns = {}
 endif
 let g:neocomplete#keyword_patterns._ = '\h\w*'
+" neocomplete plugin
 inoremap <expr><C-g> neocomplete#undo_completion()
 inoremap <expr><C-l> neocomplete#complete_common_string()
-inoremap <expr><C-e> neocomplete#cancel_popup()
-
+" <TAB>: completion.
+inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+" <C-h>, <BS>: close popup and delete backword char.
+inoremap <expr><C-h> neocomplcache#smart_close_popup()."\<C-h>"
+inoremap <expr><BS> neocomplcache#smart_close_popup()."\<C-h>"
+inoremap <expr><C-y>  neocomplcache#close_popup()
+inoremap <expr><C-e>  neocomplcache#cancel_popup()
 
 "NERDTree settings
 nmap nt :NERDTree<CR>
@@ -138,4 +147,5 @@ vmap <C-K> <Plug>(caw:i:toggle)
 "FileType config
 au BufNewFile,BufRead *.l set filetype=lisp
 au BufNewFile,BufRead *.launch set filetype=xml
+au BufNewFile,BufRead *.scala set filetype=scala
 

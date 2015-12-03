@@ -153,6 +153,9 @@ alias_completion rlc
 alias_completion rrn
 alias_completion rtc 
 
+#Gvim
+alias gvim="gvim --remote-tab"
+alias_completion gvim
 #tmux
 alias tmux="tmux new-session"
 

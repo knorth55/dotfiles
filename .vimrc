@@ -7,14 +7,14 @@ set expandtab
 set shiftwidth=4
 
 " japanese 
-set fenc=utf-8
-set fencs=iso-2022-jp,euc-jp,cp932,utf-8,sjis
-set enc=utf-8
+set fileencoding=utf-8
+set fileencodings=utf-8,iso-2022-jp,euc-jp,cp932,sjis
+set encoding=utf-8
 
 "keymapping
 nmap <S-h> ^
-nmap <S-j> }
-nmap <S-k> {
+nmap <S-k> }
+nmap <S-j> {
 nmap <S-l> $
 nmap == gg=G''
 
@@ -74,6 +74,8 @@ NeoBundle 'tyru/caw.vim'
 " vim-scala
 NeoBundle 'derekwyatt/vim-scala'
 
+"TwitVim
+NeoBundle 'vim-scripts/TwitVim'
 call neobundle#end()
 
 " Required:
@@ -98,8 +100,8 @@ au FileType unite nmap <silent> <buffer> <ESC><ESC> q<CR>
 au FileType unite imap <silent> <buffer> <ESC><ESC> <ESC>q<CR>
 
 "VimShell settings
-nmap vs :VimShell<CR>
-nmap vp :VimShellPop<CR>
+"nmap vs :VimShell<CR>
+nmap vs :VimShellPop<CR>
 
 "yankround settings
 nmap p <Plug>(yankround-p)
@@ -136,9 +138,13 @@ inoremap <expr><BS> neocomplcache#smart_close_popup()."\<C-h>"
 inoremap <expr><C-y>  neocomplcache#close_popup()
 inoremap <expr><C-e>  neocomplcache#cancel_popup()
 
-"NERDTree settings
+"NERDTree setting
 nmap nt :NERDTree<CR>
 nmap nc :NERDTreeClose<CR>
+
+"quickrun setting
+nmap <C-R> :QuickRun<CR>
+vmap <C-R> :QuickRun<CR> 
 
 "caw setting
 nmap <C-K> <Plug>(caw:i:toggle)
@@ -149,3 +155,5 @@ au BufNewFile,BufRead *.l set filetype=lisp
 au BufNewFile,BufRead *.launch set filetype=xml
 au BufNewFile,BufRead *.scala set filetype=scala
 
+"TwitVim config
+nmap cp :CPosttoTwitter<CR>

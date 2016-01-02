@@ -124,6 +124,9 @@ function share_history {
 PROMPT_COMMAND='share_history'
 shopt -u histappend
 
+#JAVA setting
+export JAVA_HOME=/usr/lib/jvm/java-8-oracle
+
 #Bash-it
 # Path to the bash it configuration
 export BASH_IT="$HOME/.bash-it"

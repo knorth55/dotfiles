@@ -129,7 +129,7 @@ export JAVA_HOME=/usr/lib/jvm/java-8-oracle
 
 #Bash-it
 # Path to the bash it configuration
-export BASH_IT="$HOME/.bash-it"
+export BASH_IT="$HOME/.bash_it"
 
 # Lock and Load a custom theme file
 # location /.bash_it/themes/

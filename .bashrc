@@ -113,7 +113,7 @@ if ! shopt -oq posix; then
   fi
 fi
 #alias completion
-source ~/.bash/alias_completion.sh
+source ~/.bash/alias_completion.bash
 
 # share bash history 
 function share_history {
@@ -157,8 +157,8 @@ alias_completion rrn
 alias_completion rtc 
 
 #Gvim
-alias gvim="gvim --remote-tab"
-alias_completion gvim
+#alias gvim="gvim --remote-tab"
+#alias_completion gvim
 #tmux
 alias tmux="tmux new-session"
 

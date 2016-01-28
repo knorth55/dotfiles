@@ -5,6 +5,7 @@ set tabstop=4
 set autoindent
 set expandtab
 set shiftwidth=4
+set nocompatible
 
 " japanese 
 set fileencoding=utf-8
@@ -59,8 +60,8 @@ NeoBundle 'Shougo/unite.vim'
 NeoBundle 'Shougo/neomru.vim'
 
 "vimproc and vimshell
-NeoBundle 'Shougo/vimproc'
-NeoBundle 'Shougo/vimshell'
+NeoBundle 'Shougo/vimproc.vim'
+NeoBundle 'Shougo/vimshell.vim'
 
 "yankround
 NeoBundle 'LeafCage/yankround.vim'

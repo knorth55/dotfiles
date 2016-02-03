@@ -77,6 +77,10 @@ NeoBundle 'derekwyatt/vim-scala'
 
 "TwitVim
 NeoBundle 'vim-scripts/TwitVim'
+
+"vim-ros
+NeoBundle 'taketwo/vim-ros'
+
 call neobundle#end()
 
 " Required:

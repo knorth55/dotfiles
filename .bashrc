@@ -149,12 +149,13 @@ source `rospack find jsk_tools`/src/bashrc.ros
 rossetlocal
 
 #ROS aliases
-alias rlc="roslaunch"
-alias rrn="rosrun"
-alias rtc="rostopic"
-alias_completion rlc
-alias_completion rrn
-alias_completion rtc 
+alias rl="roslaunch"
+alias rr="rosrun"
+alias rp="rostopic"
+alias_completion rl
+alias_completion rr
+alias_completion rp 
+export EDITOR='vim'
 
 #Gvim
 #alias gvim="gvim --remote-tab"

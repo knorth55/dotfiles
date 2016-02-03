@@ -162,3 +162,9 @@ au BufNewFile,BufRead *.scala set filetype=scala
 
 "TwitVim config
 nmap cp :CPosttoTwitter<CR>
+
+"vim-ros config
+let g:ros_make='current'
+let g:ros_build_system='catkin'
+set makeprg=catkin\ build
+

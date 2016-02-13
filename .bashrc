@@ -163,4 +163,10 @@ export EDITOR='vim'
 #tmux
 alias tmux="tmux new-session"
 
+#git alias
+alias grbumi="git rebase upstream/master -i"
+alias gpf="git push -f"
+alias_completion grbumi
+alias_completion gpf
+
 echo $PATH

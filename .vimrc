@@ -167,4 +167,3 @@ nmap cp :CPosttoTwitter<CR>
 let g:ros_make='current'
 let g:ros_build_system='catkin'
 set makeprg=catkin\ build
-

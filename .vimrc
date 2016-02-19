@@ -1,16 +1,20 @@
 set number
 set laststatus=2
-
-"256 color 
-set t_Co =256
-colorscheme molokai
+set clipboard=unnamed,autoselect
 set background =dark
+
 " tab set
 set tabstop=4
 set autoindent
 set expandtab
 set shiftwidth=4
 set nocompatible
+
+"vimdiff color 
+highlight DiffAdd    cterm=bold ctermfg=10 ctermbg=22
+highlight DiffDelete cterm=bold ctermfg=10 ctermbg=52
+highlight DiffChange cterm=bold ctermfg=10 ctermbg=17
+highlight DiffText   cterm=bold ctermfg=10 ctermbg=21
 
 " japanese 
 set fileencoding=utf-8
@@ -104,17 +108,13 @@ NeoBundleCheck
 
 "unite.vim settings
 let g:unite_enable_start_insert=1
-nmap ub :Unite buffer<CR>
-
-nmap uf :Unite -buffer-name=file file<CR>
-nmap up :Unite file_mru<CR>
-nmap ua :UniteWithBufferDir file -buffer-name=file<CR>
-au FileType unite nmap <silent> <buffer> <expr> <C-j> unite#do_action('split')
-au FileType unite imap <silent> <buffer> <expr> <C-j> unite#do_action('split')
-au FileType unite nmap <silent> <buffer> <expr> <C-l> unite#do_action('vsplit')
-au FileType unite imap <silent> <buffer> <expr> <C-l> unite#do_action('vsplit')
-au FileType unite nmap <silent> <buffer> <ESC><ESC> q<CR>
-au FileType unite imap <silent> <buffer> <ESC><ESC> <ESC>q<CR>
+let g:unite_source_history_yank_enable =1
+let g:unite_source_file_mru_limit = 200
+nnoremap <silent> uy :<C-u>Unite history/yank<CR>
+nnoremap <silent> ub :<C-u>Unite buffer<CR>
+nnoremap <silent> uf :<C-u>UniteWithBufferDir -buffer-name=files file<CR>
+nnoremap <silent> ur :<C-u>Unite -buffer-name=register register<CR>
+nnoremap <silent> uu :<C-u>Unite file_mru buffer<CR>
 
 "VimShell settings
 "nmap vs :VimShell<CR>
@@ -182,8 +182,8 @@ let g:ros_build_system='catkin'
 set makeprg=catkin\ build
 
 "vim-fugitive config
-nmap gd :Gvdiff<CR>
-nmap gs :Gstatus<CR>
+nmap gdf :Gvdiff<CR>
+nmap gst :Gstatus<CR>
 
 "vim-airline config
 let g:airline_theme='molokai'
@@ -191,3 +191,8 @@ let g:airline#extensions#branch#enabled = 1
 let g:airline#extensions#branch#vcs_priority = ["git"]
 let g:airline#extensions#branch#displayed_head_limit = 10
 
+"colorscheme 
+colorscheme molokai
+syntax on
+highlight Visual ctermbg=8
+highlight Comment ctermfg=61

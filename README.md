@@ -1,2 +1,2 @@
-only .vimrc and .vim/
+require bash-it and tmux
 

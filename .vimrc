@@ -171,6 +171,7 @@ vmap <C-K> <Plug>(caw:i:toggle)
 au BufNewFile,BufRead *.l set filetype=lisp
 au BufNewFile,BufRead *.launch set filetype=xml
 au BufNewFile,BufRead *.scala set filetype=scala
+au BufNewFile,BufRead *.sbt set filetype=scala
 
 "TwitVim config
 nmap cp :CPosttoTwitter<CR>
@@ -181,7 +182,8 @@ let g:ros_build_system='catkin'
 set makeprg=catkin\ build
 
 "vim-fugitive config
-nmap gd :Gdiff<CR>
+nmap gd :Gvdiff<CR>
+nmap gs :Gstatus<CR>
 
 "vim-airline config
 let g:airline_theme='molokai'

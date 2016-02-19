@@ -1,5 +1,10 @@
 set number
 set laststatus=2
+
+"256 color 
+set t_Co =256
+colorscheme molokai
+set background =dark
 " tab set
 set tabstop=4
 set autoindent
@@ -174,4 +179,13 @@ nmap cp :CPosttoTwitter<CR>
 let g:ros_make='current'
 let g:ros_build_system='catkin'
 set makeprg=catkin\ build
+
+"vim-fugitive config
+nmap gd :Gdiff<CR>
+
+"vim-airline config
+let g:airline_theme='molokai'
+let g:airline#extensions#branch#enabled = 1
+let g:airline#extensions#branch#vcs_priority = ["git"]
+let g:airline#extensions#branch#displayed_head_limit = 10
 

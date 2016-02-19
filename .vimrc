@@ -1,5 +1,5 @@
 set number
-
+set laststatus=2
 " tab set
 set tabstop=4
 set autoindent
@@ -80,6 +80,13 @@ NeoBundle 'vim-scripts/TwitVim'
 
 "vim-ros
 NeoBundle 'taketwo/vim-ros'
+
+"vim-fugitive
+NeoBundle 'tpope/vim-fugitive'
+
+"vim-airline
+NeoBundle 'vim-airline/vim-airline'
+NeoBundle 'vim-airline/vim-airline-themes'
 
 call neobundle#end()
 
@@ -167,3 +174,4 @@ nmap cp :CPosttoTwitter<CR>
 let g:ros_make='current'
 let g:ros_build_system='catkin'
 set makeprg=catkin\ build
+

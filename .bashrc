@@ -63,6 +63,10 @@ else
 fi
 unset color_prompt force_color_prompt
 
+if [ -n "$DISPLAY" -a "$TERM" == "xterm" ]; then
+    export TERM=xterm-256color
+fi
+
 # If this is an xterm set the title to user@host:dir
 case "$TERM" in
 xterm*|rxvt*)

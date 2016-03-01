@@ -1,3 +1,9 @@
+"colorscheme
+colorscheme molokai
+syntax on
+highlight Visual ctermbg=8
+highlight Comment ctermfg=61
+
 set number
 set laststatus=2
 set clipboard=unnamed,autoselect
@@ -10,13 +16,13 @@ set expandtab
 set shiftwidth=4
 set nocompatible
 
-"vimdiff color 
+"vimdiff color
 highlight DiffAdd    cterm=bold ctermfg=10 ctermbg=22
 highlight DiffDelete cterm=bold ctermfg=10 ctermbg=52
 highlight DiffChange cterm=bold ctermfg=10 ctermbg=17
 highlight DiffText   cterm=bold ctermfg=10 ctermbg=21
 
-" japanese 
+" japanese
 set fileencoding=utf-8
 set fileencodings=utf-8,iso-2022-jp,euc-jp,cp932,sjis
 set encoding=utf-8
@@ -97,6 +103,9 @@ NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'vim-airline/vim-airline'
 NeoBundle 'vim-airline/vim-airline-themes'
 
+"pydiction
+NeoBundle 'vim-scripts/Pydiction'
+
 call neobundle#end()
 
 " Required:
@@ -132,7 +141,7 @@ nmap <C-n> <Plug>(yankround-next)
 nmap pp :Unite yankround<CR>
 xmap pp :Unite yankround<CR>
 
-"neocomplete settings 
+"neocomplete settings
 let g:neocomplete#enable_at_startup = 1
 let g:neocomplete#enable_ignore_case = 1
 let g:neocomplete#enable_smart_case = 1
@@ -161,7 +170,7 @@ nmap nc :NERDTreeClose<CR>
 
 "quickrun setting
 nmap <C-R> :QuickRun<CR>
-vmap <C-R> :QuickRun<CR> 
+vmap <C-R> :QuickRun<CR>
 
 "caw setting
 nmap <C-K> <Plug>(caw:i:toggle)
@@ -191,8 +200,7 @@ let g:airline#extensions#branch#enabled = 1
 let g:airline#extensions#branch#vcs_priority = ["git"]
 let g:airline#extensions#branch#displayed_head_limit = 10
 
-"colorscheme 
-colorscheme molokai
-syntax on
-highlight Visual ctermbg=8
-highlight Comment ctermfg=61
+"pydiction config
+let g:pydiction_location = '~/.vim/bundle/Pydiction/complete-dict'
+let g:pydiction_menu_height = 8
+

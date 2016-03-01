@@ -75,33 +75,12 @@ xterm*|rxvt*)
 *)
     ;;
 esac
-
-# enable color support of ls and also add handy aliases
-if [ -x /usr/bin/dircolors ]; then
-    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
-    alias ls='ls --color=auto'
-    #alias dir='dir --color=auto'
-    #alias vdir='vdir --color=auto'
-
-    alias grep='grep --color=auto'
-    alias fgrep='fgrep --color=auto'
-    alias egrep='egrep --color=auto'
-fi
-
-# some more ls aliases
-alias ll='ls -alF'
-alias la='ls -A'
-alias l='ls -CF'
-
-# Add an "alert" alias for long running commands.  Use like so:
-#   sleep 10; alert
-alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
-
 # Alias definitions.
 # You may want to put all your additions into a separate file like
 # ~/.bash_aliases, instead of adding them here directly.
 # See /usr/share/doc/bash-doc/examples in the bash-doc package.
 
+#bash_aliases
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
@@ -116,9 +95,6 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
-#alias completion
-source ~/.bash/alias_completion.bash
-
 # share bash history 
 function share_history {
     history -a
@@ -127,9 +103,6 @@ function share_history {
 }
 PROMPT_COMMAND='share_history'
 shopt -u histappend
-
-#JAVA setting
-export JAVA_HOME=/usr/lib/jvm/java-8-oracle
 
 #Bash-it
 # Path to the bash it configuration
@@ -142,35 +115,15 @@ export BASH_IT_THEME='zork'
 # Load Bash It
 source $BASH_IT/bash_it.sh
 
-#ROS 
+#JAVA setting
+export JAVA_HOME=/usr/lib/jvm/java-8-oracle
+
+#ROS
 source /opt/ros/indigo/setup.bash
-alias irteusgl="rlwrap irteusgl"
-alias roseus="rlwrap roseus"
-alias_completion irteusgl
-alias_completion roseus
 source `rospack find jsk_tools`/src/bashrc.ros
 #rossetip
 rossetlocal
-
-#ROS aliases
-alias rl="roslaunch"
-alias rr="rosrun"
-alias rp="rostopic"
-alias_completion rl
-alias_completion rr
-alias_completion rp 
 export EDITOR='vim'
 
-#Gvim
-#alias gvim="gvim --remote-tab"
-#alias_completion gvim
-#tmux
-alias tmux="tmux new-session"
-
-#git alias
-alias grbumi="git rebase upstream/master -i"
-alias gpf="git push -f"
-alias_completion grbumi
-alias_completion gpf
-
-echo $PATH
+#alias_completion
+alias_completion

@@ -1,3 +1,4 @@
+syntax enable
 "colorscheme
 colorscheme molokai
 syntax on
@@ -6,7 +7,7 @@ highlight Comment ctermfg=61
 
 set number
 set laststatus=2
-set clipboard=unnamed,autoselect
+set clipboard=unnamedplus
 set background =dark
 
 " tab set
@@ -14,7 +15,6 @@ set tabstop=4
 set autoindent
 set expandtab
 set shiftwidth=4
-set nocompatible
 
 "vimdiff color
 highlight DiffAdd    cterm=bold ctermfg=10 ctermbg=22
@@ -36,18 +36,11 @@ nmap == gg=G''
 
 " Note: Skip initialization for vim-tiny or vim-small.
 if 0 | endif
-
 if has('vim_starting')
-    " Required:
-    if &compatible
-        set nocompatible
-    endif
-    set runtimepath+=~/.vim/bundle/neobundle.vim/
+set runtimepath+=~/.config/nvim/bundle/neobundle.vim/
 endif
 
-" Required:
-call neobundle#begin(expand('~/.vim/bundle/'))
-
+call neobundle#begin(expand('~/.config/nvim/bundle/'))
 " Let NeoBundle manage NeoBundle
 " Required:
 NeoBundleFetch 'Shougo/neobundle.vim'
@@ -57,6 +50,9 @@ NeoBundle 'Shougo/vimfiler'
 " My Bundles here:
 " Refer to |:NeoBundle-examples|.
 " Note: You don't set neobundle setting in .gvimrc!
+
+"deoplete
+NeoBundle 'Shougo/deoplete.nvim'
 
 " NERDTree
 NeoBundle 'scrooloose/nerdtree'
@@ -80,9 +76,6 @@ NeoBundle 'Shougo/vimshell.vim'
 
 "yankround
 NeoBundle 'LeafCage/yankround.vim'
-
-"neocomplete
-NeoBundle 'Shougo/neocomplete'
 
 "caw
 NeoBundle 'tyru/caw.vim'
@@ -115,6 +108,19 @@ filetype plugin indent on
 " this will conveniently prompt you to install them.
 NeoBundleCheck
 
+"deoplete settings
+let g:deoplete#enable_at_startup=1
+let g:deoplete#enable_ignore_case = 1
+let g:deoplete#enable_smart_case = 1
+let g:deoplete#enable_auto_select = 0
+let g:deoplete#enable_auto_close_preview = 1
+let g:deoplete#enable_ignore_case = 1
+let g:deoplete#enable_enable_camel_case_completion = 0
+if !exists('g:deoplete#keyword_patterns')
+    let g:deocomplete#keyword_patterns = {}
+endif
+let g:deocomplete#keyword_patterns._ = '\h\w*'
+
 "unite.vim settings
 let g:unite_enable_start_insert=1
 let g:unite_source_history_yank_enable =1
@@ -140,19 +146,6 @@ nmap <C-p> <Plug>(yankround-prev)
 nmap <C-n> <Plug>(yankround-next)
 nmap pp :Unite yankround<CR>
 xmap pp :Unite yankround<CR>
-
-"neocomplete settings
-let g:neocomplete#enable_at_startup = 1
-let g:neocomplete#enable_ignore_case = 1
-let g:neocomplete#enable_smart_case = 1
-let g:neocomplete#enable_auto_select = 0
-let g:neocomplete#enable_auto_close_preview = 1
-let g:neocomplete#enable_ignore_case = 1
-let g:neocomplete#enable_enable_camel_case_completion = 0
-if !exists('g:neocomplete#keyword_patterns')
-    let g:neocomplete#keyword_patterns = {}
-endif
-let g:neocomplete#keyword_patterns._ = '\h\w*'
 
 "NERDTree setting
 nmap nt :NERDTree<CR>

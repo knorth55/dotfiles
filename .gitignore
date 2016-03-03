@@ -1,4 +1,5 @@
-update.bash
 .vim/bundle/
 .vim/colors/
 .vim/molokai/
+nvim/bundle/
+nvim/colors/

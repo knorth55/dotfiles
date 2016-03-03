@@ -21,8 +21,8 @@ set encoding=utf-8
 
 "keymapping
 nmap <S-h> ^
-nmap <S-k> }
-nmap <S-j> {
+nmap <S-k> {
+nmap <S-j> }
 nmap <S-l> $
 nmap == gg=G''
 

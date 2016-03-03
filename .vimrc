@@ -1,8 +1,6 @@
 "colorscheme
 colorscheme molokai
 syntax on
-highlight Visual ctermbg=8
-highlight Comment ctermfg=61
 
 set number
 set laststatus=2
@@ -15,12 +13,6 @@ set autoindent
 set expandtab
 set shiftwidth=4
 set nocompatible
-
-"vimdiff color
-highlight DiffAdd    cterm=bold ctermfg=10 ctermbg=22
-highlight DiffDelete cterm=bold ctermfg=10 ctermbg=52
-highlight DiffChange cterm=bold ctermfg=10 ctermbg=17
-highlight DiffText   cterm=bold ctermfg=10 ctermbg=21
 
 " japanese
 set fileencoding=utf-8
@@ -193,4 +185,14 @@ let g:airline#extensions#branch#displayed_head_limit = 10
 "pydiction config
 let g:pydiction_location = '~/.vim/bundle/Pydiction/complete-dict'
 let g:pydiction_menu_height = 8
+
+"change molokai colorscheme
+highlight Visual ctermbg=8
+highlight Comment ctermfg=61
+
+"vimdiff color
+highlight DiffAdd    cterm=bold ctermfg=10 ctermbg=22
+highlight DiffDelete cterm=bold ctermfg=10 ctermbg=52
+highlight DiffChange cterm=bold ctermfg=10 ctermbg=17
+highlight DiffText   cterm=bold ctermfg=10 ctermbg=21
 

@@ -125,5 +125,7 @@ source `rospack find jsk_tools`/src/bashrc.ros
 rossetlocal
 export EDITOR='vim'
 
+#neovim setting
+export XDG_CONFIG_HOME=~/.config
 #alias_completion
 alias_completion

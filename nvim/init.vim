@@ -1,9 +1,7 @@
 syntax enable
+
 "colorscheme
 colorscheme molokai
-syntax on
-highlight Visual ctermbg=8
-highlight Comment ctermfg=61
 
 set number
 set laststatus=2
@@ -16,40 +14,34 @@ set autoindent
 set expandtab
 set shiftwidth=4
 
-"vimdiff color
-highlight DiffAdd    cterm=bold ctermfg=10 ctermbg=22
-highlight DiffDelete cterm=bold ctermfg=10 ctermbg=52
-highlight DiffChange cterm=bold ctermfg=10 ctermbg=17
-highlight DiffText   cterm=bold ctermfg=10 ctermbg=21
-
 " japanese
 set fileencoding=utf-8
 set fileencodings=utf-8,iso-2022-jp,euc-jp,cp932,sjis
 set encoding=utf-8
 
 "keymapping
-nmap <S-h> ^
-nmap <S-k> }
-nmap <S-j> {
-nmap <S-l> $
-nmap == gg=G''
+nmap <s-h> ^
+nmap <s-k> }
+nmap <s-j> {
+nmap <s-l> $
+nmap == gg=g''
 
-" Note: Skip initialization for vim-tiny or vim-small.
+" note: skip initialization for vim-tiny or vim-small.
 if 0 | endif
 if has('vim_starting')
 set runtimepath+=~/.config/nvim/bundle/neobundle.vim/
 endif
 
 call neobundle#begin(expand('~/.config/nvim/bundle/'))
-" Let NeoBundle manage NeoBundle
-" Required:
+" let neobundle manage neobundle
+" required:
 NeoBundleFetch 'Shougo/neobundle.vim'
 
 NeoBundle 'Shougo/vimfiler'
 
-" My Bundles here:
-" Refer to |:NeoBundle-examples|.
-" Note: You don't set neobundle setting in .gvimrc!
+" my bundles here:
+" refer to |:neobundle-examples|.
+" note: you don't set neobundle setting in .gvimrc!
 
 "deoplete
 NeoBundle 'Shougo/deoplete.nvim'
@@ -108,6 +100,9 @@ filetype plugin indent on
 " this will conveniently prompt you to install them.
 NeoBundleCheck
 
+"python3 settings
+let g:python3_host_prog = '/usr/bin/python3'
+
 "deoplete settings
 let g:deoplete#enable_at_startup=1
 let g:deoplete#enable_ignore_case = 1
@@ -120,6 +115,12 @@ if !exists('g:deoplete#keyword_patterns')
     let g:deocomplete#keyword_patterns = {}
 endif
 let g:deocomplete#keyword_patterns._ = '\h\w*'
+
+" DEBUG(https://github.com/Shougo/deoplete.nvim/issues/160)
+" python3 plugins register for deoplete
+call remote#host#RegisterPlugin('python3', expand('~/.config/nvim/bundle/deoplete.nvim/rplugin/python3/deoplete.py'), [
+      \ {'sync': 1, 'name': '_deoplete', 'type': 'function', 'opts': {}},
+     \ ])
 
 "unite.vim settings
 let g:unite_enable_start_insert=1
@@ -184,6 +185,16 @@ let g:airline#extensions#branch#vcs_priority = ["git"]
 let g:airline#extensions#branch#displayed_head_limit = 10
 
 "pydiction config
-let g:pydiction_location = '~/.vim/bundle/Pydiction/complete-dict'
+let g:pydiction_location = '~/.config/nvim/bundle/Pydiction/complete-dict'
 let g:pydiction_menu_height = 8
+
+" change molokai color scheme
+highlight visual ctermbg=8
+highlight comment ctermfg=61
+
+"vimdiff color
+highlight diffadd    cterm=bold ctermfg=10 ctermbg=22
+highlight diffdelete cterm=bold ctermfg=10 ctermbg=52
+highlight diffchange cterm=bold ctermfg=10 ctermbg=17
+highlight difftext   cterm=bold ctermfg=10 ctermbg=21
 

@@ -112,9 +112,9 @@ let g:deoplete#enable_auto_close_preview = 1
 let g:deoplete#enable_ignore_case = 1
 let g:deoplete#enable_enable_camel_case_completion = 0
 if !exists('g:deoplete#keyword_patterns')
-    let g:deocomplete#keyword_patterns = {}
+    let g:deoplete#keyword_patterns = {}
 endif
-let g:deocomplete#keyword_patterns._ = '\h\w*'
+inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 
 " DEBUG(https://github.com/Shougo/deoplete.nvim/issues/160)
 " python3 plugins register for deoplete
@@ -189,6 +189,11 @@ let g:pydiction_location = '~/.config/nvim/bundle/Pydiction/complete-dict'
 let g:pydiction_menu_height = 8
 
 " change molokai color scheme
+highlight Normal ctermbg=None
+highlight LineNr ctermbg=None
+highlight SignColumn ctermbg=None
+highlight VertSplit ctermbg=None
+highlight NonText ctermbg=None
 highlight visual ctermbg=8
 highlight comment ctermfg=61
 

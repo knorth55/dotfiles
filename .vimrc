@@ -187,6 +187,11 @@ let g:pydiction_location = '~/.vim/bundle/Pydiction/complete-dict'
 let g:pydiction_menu_height = 8
 
 "change molokai colorscheme
+highlight Normal ctermbg=None
+highlight LineNr ctermbg=None
+highlight SignColumn ctermbg=None
+highlight VertSplit ctermbg=None
+highlight NonText ctermbg=None
 highlight Visual ctermbg=8
 highlight Comment ctermfg=61
 

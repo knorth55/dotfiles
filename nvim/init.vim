@@ -126,11 +126,10 @@ call remote#host#RegisterPlugin('python3', expand('~/.config/nvim/bundle/deoplet
 let g:unite_enable_start_insert=1
 let g:unite_source_history_yank_enable =1
 let g:unite_source_file_mru_limit = 200
-nnoremap <silent> uy :<C-u>Unite history/yank<CR>
-nnoremap <silent> ub :<C-u>Unite buffer<CR>
-nnoremap <silent> uf :<C-u>UniteWithBufferDir -buffer-name=files file<CR>
-nnoremap <silent> ur :<C-u>Unite -buffer-name=register register<CR>
-nnoremap <silent> uu :<C-u>Unite file_mru buffer<CR>
+nnoremap <silent> \ub :<C-u>Unite buffer<CR>
+nnoremap <silent> \uf :<C-u>UniteWithBufferDir -buffer-name=files file<CR>
+nnoremap <silent> \ur :<C-u>Unite -buffer-name=register register<CR>
+nnoremap <silent> \uu :<C-u>Unite file_mru buffer<CR>
 
 "VimShell settings
 "nmap vs :VimShell<CR>
@@ -138,15 +137,12 @@ nmap vs :VimShellPop<CR>
 
 "yankround settings
 nmap p <Plug>(yankround-p)
-xmap p <Plug>(yankround-p)
 nmap P <Plug>(yankround-P)
 nmap gp <Plug>(yankround-gp)
-xmap gp <Plug>(yankround-gp)
 nmap gP <Plug>(yankround-gP)
 nmap <C-p> <Plug>(yankround-prev)
 nmap <C-n> <Plug>(yankround-next)
 nmap pp :Unite yankround<CR>
-xmap pp :Unite yankround<CR>
 
 "NERDTree setting
 nmap nt :NERDTree<CR>

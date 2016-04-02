@@ -4,7 +4,7 @@ syntax on
 
 set number
 set laststatus=2
-set clipboard=unnamed,autoselect
+set clipboard+=unnamed,autoselect
 set background =dark
 
 " tab set
@@ -95,8 +95,8 @@ NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'vim-airline/vim-airline'
 NeoBundle 'vim-airline/vim-airline-themes'
 
-"pydiction
-NeoBundle 'vim-scripts/Pydiction'
+"jedi-vim for python
+NeoBundle 'davidhalter/jedi-vim'
 
 call neobundle#end()
 
@@ -190,9 +190,10 @@ let g:airline#extensions#branch#enabled = 1
 let g:airline#extensions#branch#vcs_priority = ["git"]
 let g:airline#extensions#branch#displayed_head_limit = 10
 
-"pydiction config
-let g:pydiction_location = '~/.vim/bundle/Pydiction/complete-dict'
-let g:pydiction_menu_height = 8
+"jedi-vim
+let g:jedi#completions_command = "<C-N>"
+let g:jedi#rename_command = "<leader>rr"
+let g:jedi#documentation_command = "<leader>k"
 
 "change molokai colorscheme
 highlight Normal ctermbg=None

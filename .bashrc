@@ -118,6 +118,9 @@ source $BASH_IT/bash_it.sh
 #JAVA setting
 export JAVA_HOME=/usr/lib/jvm/java-8-oracle
 
+#ccache
+export CCACHE_DIR="$HOME/.ccache"
+
 #ROS
 source /opt/ros/indigo/setup.bash
 source `rospack find jsk_tools`/src/bashrc.ros

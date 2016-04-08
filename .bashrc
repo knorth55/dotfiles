@@ -95,6 +95,7 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
+
 # share bash history 
 function share_history {
     history -a
@@ -105,7 +106,7 @@ PROMPT_COMMAND='share_history'
 shopt -u histappend
 
 # added by travis gem
-[ -f /home/shingo/.travis/travis.sh ] && source /home/shingo/.travis/travis.sh
+[ -f "$HOME/.travis/travis.sh" ] && source "$HOME/.travis/travis.sh"
 
 #Bash-it
 # Path to the bash it configuration
@@ -135,5 +136,4 @@ export EDITOR='vim'
 export XDG_CONFIG_HOME=~/.config
 #alias_completion
 alias_completion
-
 

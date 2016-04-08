@@ -104,6 +104,9 @@ function share_history {
 PROMPT_COMMAND='share_history'
 shopt -u histappend
 
+# added by travis gem
+[ -f /home/shingo/.travis/travis.sh ] && source /home/shingo/.travis/travis.sh
+
 #Bash-it
 # Path to the bash it configuration
 export BASH_IT="$HOME/.bash_it"
@@ -132,3 +135,5 @@ export EDITOR='vim'
 export XDG_CONFIG_HOME=~/.config
 #alias_completion
 alias_completion
+
+

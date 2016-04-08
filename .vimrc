@@ -19,6 +19,12 @@ set fileencoding=utf-8
 set fileencodings=utf-8,iso-2022-jp,euc-jp,cp932,sjis
 set encoding=utf-8
 
+"search settings
+set hlsearch
+set incsearch
+set ignorecase
+set smartcase
+
 "keymapping
 nmap <S-h> ^
 nmap <S-k> {

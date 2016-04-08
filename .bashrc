@@ -96,7 +96,7 @@ if ! shopt -oq posix; then
   fi
 fi
 
-# share bash history 
+# share bash history
 function share_history {
     history -a
     history -c
@@ -104,6 +104,39 @@ function share_history {
 }
 PROMPT_COMMAND='share_history'
 shopt -u histappend
+
+#percol settings
+
+#C-r: percol history search
+percol-search-history() {
+    local l=$(HISTTIMEFORMAT= history | tac | sed -e 's/^\s*[0-9]\+\s\+//' | percol --query "$READLINE_LINE")
+    READLINE_LINE="$l"
+    READLINE_POINT=${#l}
+}
+bind -x '"\C-r": percol-search-history'
+# C-x r: reverse-search-history
+bind '"\C-xr": reverse-search-history'
+# Esc-p : rostopic search
+percol-search-rostopic() {
+    local l=$(rostopic list | percol)
+    READLINE_LINE="$READLINE_LINE$l"
+    READLINE_POINT=${#READLINE_LINE}
+}
+bind -x '"\ep" : percol-search-rostopic'
+
+#travis percol history search
+percol-search-travis-history() {
+    if [ "$READLINE_LINE" = "travis logs " ]; then
+        local l=$(travis history --limit 20 | percol | sed -e "s/#\([0-9]\+\).*/\1/g")
+        READLINE_LINE="$READLINE_LINE$l"
+        READLINE_POINT=${#READLINE_LINE}
+    elif [ "$READLINE_LINE" = "travis open " ]; then
+        local l=$(travis history --limit 20 | percol | sed -e "s/#\([0-9]\+\).*/\1/g")
+        READLINE_LINE="$READLINE_LINE$l"
+        READLINE_POINT=${#READLINE_LINE}
+    fi
+}
+bind -x '"\eo" :percol-search-travis-history'
 
 # added by travis gem
 [ -f "$HOME/.travis/travis.sh" ] && source "$HOME/.travis/travis.sh"

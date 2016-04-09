@@ -147,17 +147,11 @@ if !exists('g:neocomplete#keyword_patterns')
     let g:neocomplete#keyword_patterns = {}
 endif
 let g:neocomplete#keyword_patterns._ = '\h\w*'
-inoremap <expr><C-g>     neocomplete#undo_completion()
-inoremap <expr><C-l>     neocomplete#complete_common_string()
-inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
-function! s:my_cr_function()
-  return (pumvisible() ? "\<C-y>" : "" ) . "\<CR>"
-  " For no inserting <CR> key.
-  "return pumvisible() ? "\<C-y>" : "\<CR>"
-endfunction
-inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
-inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
-inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
+imap <expr><C-g>     neocomplete#undo_completion()
+imap <expr><C-l>     neocomplete#complete_common_string()
+imap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+imap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
+imap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
 
 "NERDTree setting
 nmap nt :NERDTree<CR>

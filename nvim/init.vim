@@ -19,12 +19,18 @@ set fileencoding=utf-8
 set fileencodings=utf-8,iso-2022-jp,euc-jp,cp932,sjis
 set encoding=utf-8
 
+"search settings
+set hlsearch
+set incsearch
+set ignorecase
+set smartcase
+
 "keymapping
-nmap <s-h> ^
-nmap <s-k> {
-nmap <s-j> }
-nmap <s-l> $
-nmap == gg=g''
+nmap <S-h> ^
+nmap <S-k> {
+nmap <S-j> }
+nmap <S-l> $
+nmap == gg=G''
 
 " note: skip initialization for vim-tiny or vim-small.
 if 0 | endif
@@ -191,12 +197,12 @@ highlight LineNr ctermbg=None
 highlight SignColumn ctermbg=None
 highlight VertSplit ctermbg=None
 highlight NonText ctermbg=None
-highlight visual ctermbg=8
-highlight comment ctermfg=61
+highlight Visual ctermbg=8
+highlight Comment ctermfg=61
 
 "vimdiff color
-highlight diffadd    cterm=bold ctermfg=10 ctermbg=22
-highlight diffdelete cterm=bold ctermfg=10 ctermbg=52
-highlight diffchange cterm=bold ctermfg=10 ctermbg=17
-highlight difftext   cterm=bold ctermfg=10 ctermbg=21
+highlight DiffAdd    cterm=bold ctermfg=10 ctermbg=22
+highlight DiffDelete cterm=bold ctermfg=10 ctermbg=52
+highlight DiffChange cterm=bold ctermfg=10 ctermbg=17
+highlight DiffText   cterm=bold ctermfg=10 ctermbg=21
 

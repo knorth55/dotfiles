@@ -1,0 +1,21 @@
+[user]
+    name = Shingo Kitagawa
+    email = shingogo@hotmail.co.jp
+[http]
+	sslVerify = false
+[core]
+	editor = vim
+[mergetool]
+	keepBackup = false
+	editor = vim
+	trustExitCode = false
+[merge]
+    tool = vimdiff2
+[pull]
+    rebase = true
+[push]
+    default = current
+[pager]
+    log = diff-highlight | less
+    show = diff-highlight | less
+    diff = diff-highlight | less

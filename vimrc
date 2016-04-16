@@ -19,6 +19,9 @@ set fileencoding=utf-8
 set fileencodings=utf-8,iso-2022-jp,euc-jp,cp932,sjis
 set encoding=utf-8
 
+" backspace 
+set backspace=indent,eol,start
+
 "search settings
 set hlsearch
 set incsearch

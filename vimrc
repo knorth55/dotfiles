@@ -162,8 +162,8 @@ nmap <C-R> :QuickRun<CR>
 vmap <C-R> :QuickRun<CR>
 
 "caw setting
-nmap <C-K> <Plug>(caw:i:toggle)
-vmap <C-K> <Plug>(caw:i:toggle)
+nmap <C-K> <Plug>(caw:hatpos:toggle)
+vmap <C-K> <Plug>(caw:hatpos:toggle)
 
 "FileType config
 au BufNewFile,BufRead *.l set filetype=lisp

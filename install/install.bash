@@ -7,6 +7,7 @@ cd $dotfiles_path
 # symbolic link
 eval ln -sf  $dotfiles_path/bash/bashrc ~/.bashrc
 eval ln -sf  $dotfiles_path/bash/bash_aliases ~/.bash_aliases
+eval ln -sf  $dotfiles_path/bash/bash_profile ~/.bash_profile
 eval ln -sfn $dotfiles_path/bash_it ~/.bash_it
 eval ln -sf  $dotfiles_path/git/gitconfig ~/.gitconfig
 eval ln -sf  $dotfiles_path/git/gitignore_global ~/.gitignore_global

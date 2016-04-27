@@ -31,6 +31,9 @@ alias rp="rostopic"
 alias tmux="tmux new-session"
 
 #git alias
+alias grb="git rebase"
+alias grbc="git rebase --continue"
+alias grba="git rebase --abort"
 alias grbm="git rebase origin/master"
 alias grbmi="git rebase origin/master -i"
 alias gpm="git push origin master"

@@ -75,15 +75,6 @@ xterm*|rxvt*)
 *)
     ;;
 esac
-# Alias definitions.
-# You may want to put all your additions into a separate file like
-# ~/.bash_aliases, instead of adding them here directly.
-# See /usr/share/doc/bash-doc/examples in the bash-doc package.
-
-#bash_aliases
-if [ -f ~/.bash_aliases ]; then
-    . ~/.bash_aliases
-fi
 
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
@@ -151,6 +142,16 @@ export BASH_IT_THEME='zork'
 
 # Load Bash It
 source $BASH_IT/bash_it.sh
+
+# Alias definitions.
+# You may want to put all your additions into a separate file like
+# ~/.bash_aliases, instead of adding them here directly.
+# See /usr/share/doc/bash-doc/examples in the bash-doc package.
+
+#bash_aliases
+if [ -f ~/.bash_aliases ]; then
+    . ~/.bash_aliases
+fi
 
 #JAVA setting
 export JAVA_HOME=/usr/lib/jvm/java-8-oracle

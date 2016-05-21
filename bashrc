@@ -161,10 +161,16 @@ export CCACHE_DIR="$HOME/.ccache"
 
 #ROS
 source /opt/ros/indigo/setup.bash
+source ~/ros/indigo/devel/setup.bash
 source `rospack find jsk_tools`/src/bashrc.ros
 #rossetip
 rossetlocal
 export EDITOR='vim'
+
+#Golang
+export GOROOT=/usr/local/go
+export GOPATH=$HOME/go
+export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
 
 #neovim setting
 export XDG_CONFIG_HOME=~/.config

@@ -91,9 +91,6 @@ NeoBundle 'tyru/caw.vim'
 " vim-scala
 NeoBundle 'derekwyatt/vim-scala'
 
-"TwitVim
-NeoBundle 'vim-scripts/TwitVim'
-
 "vim-ros
 NeoBundle 'taketwo/vim-ros'
 
@@ -182,6 +179,9 @@ nmap cp :CPosttoTwitter<CR>
 let g:ros_make='current'
 let g:ros_build_system='catkin'
 set makeprg=catkin\ build
+
+"syntastic
+let g:syntastic_check_on_wq = 0
 
 "vim-fugitive config
 nmap gdf :Gvdiff<CR>

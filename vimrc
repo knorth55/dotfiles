@@ -158,8 +158,8 @@ nmap nt :NERDTree<CR>
 nmap nc :NERDTreeClose<CR>
 
 "quickrun setting
-nmap <C-R> :QuickRun<CR>
-vmap <C-R> :QuickRun<CR>
+nmap \rr :QuickRun<CR>
+vmap \rr :QuickRun<CR>
 
 "caw setting
 nmap <C-K> <Plug>(caw:hatpos:toggle)

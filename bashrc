@@ -172,6 +172,11 @@ export GOROOT=/usr/local/go
 export GOPATH=$HOME/go
 export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
 
+#CUDA
+export CUDA_ROOT=/usr/local/cuda-7.5
+export PATH=$PATH:$CUDA_ROOT/bin
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$CUDA_ROOT/lib64
+
 #neovim setting
 export XDG_CONFIG_HOME=~/.config
 #alias_completion

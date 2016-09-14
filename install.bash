@@ -1,4 +1,4 @@
-#::!/usr/bin/env bash
+#!/usr/bin/env bash
 
 # get dotfiles path
 dotfiles_path=$(cd $(dirname $0) && pwd)

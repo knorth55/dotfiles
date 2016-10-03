@@ -28,8 +28,9 @@ alias rp="rostopic"
 #Gvim
 #alias gvim="gvim --remote-tab"
 #tmux
-alias tmux="tmux new-session"
-
+#alias tmux="tmux new-session"
+alias pbcopy='xsel --clipboard --input'
+alias pbpaste='xsel --clipboard --output'
 #git alias
 alias gd="git diff"
 alias grb="git rebase"

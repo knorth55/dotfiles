@@ -153,6 +153,12 @@ if !exists('g:neocomplete#keyword_patterns')
     let g:neocomplete#keyword_patterns = {}
 endif
 let g:neocomplete#keyword_patterns._ = '\h\w*'
+let g:neocomplete#sources#dictionary#dictionaries = {
+    \ 'default' : '',
+    \ 'python' : '~/.vim/bundle/pydiction/complete-dict',
+    \ 'lisp' : '~/.vim/dicts/lisp.dict'
+    \ }
+
 imap <expr><C-g>     neocomplete#undo_completion()
 imap <expr><C-l>     neocomplete#complete_common_string()
 imap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"

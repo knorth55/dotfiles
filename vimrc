@@ -104,6 +104,9 @@ NeoBundle 'vim-airline/vim-airline-themes'
 "jedi-vim for python
 NeoBundle 'davidhalter/jedi-vim'
 
+" tex edit
+NeoBundle 'lervag/vimtex'
+
 call neobundle#end()
 
 " Required:

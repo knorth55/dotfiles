@@ -104,6 +104,9 @@ NeoBundle 'vim-airline/vim-airline-themes'
 "jedi-vim for python
 NeoBundle 'davidhalter/jedi-vim'
 
+"PyDiction
+NeoBundle 'rkulla/pydiction'
+
 " tex edit
 NeoBundle 'lervag/vimtex'
 
@@ -177,6 +180,9 @@ au BufNewFile,BufRead *.erb set filetype=ruby
 
 "Dict config
 au FileType lisp set dictionary='~/.vim/dicts/lisp.dict'
+
+"PyDiction
+let g:pydiction_location = '~/.vim/bundle/pydiction/complete-dict'
 
 "TwitVim config
 nmap cp :CPosttoTwitter<CR>

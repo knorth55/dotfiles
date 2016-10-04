@@ -186,6 +186,7 @@ au BufNewFile,BufRead *.erb set filetype=ruby
 
 "Dict config
 au FileType lisp set dictionary='~/.vim/dicts/lisp.dict'
+au FileType python set dictionary='~/.vim/bundle/pydiction/complete-dict'
 
 "PyDiction
 let g:pydiction_location = '~/.vim/bundle/pydiction/complete-dict'

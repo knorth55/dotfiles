@@ -175,6 +175,9 @@ au BufNewFile,BufRead *.scala set filetype=scala
 au BufNewFile,BufRead *.sbt set filetype=scala
 au BufNewFile,BufRead *.erb set filetype=ruby
 
+"Dict config
+au FileType lisp set dictionary='~/.vim/dicts/lisp.dict'
+
 "TwitVim config
 nmap cp :CPosttoTwitter<CR>
 

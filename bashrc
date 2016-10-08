@@ -172,6 +172,9 @@ export GOROOT=/usr/local/go
 export GOPATH=$HOME/go
 export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
 
+#python naoqi
+export PYTHONPATH=$PYTHONPATH:$HOME/pynaoqi-python2.7-2.1.4.13-linux64
+
 #CUDA
 export CUDA_ROOT=/usr/local/cuda-7.5
 export PATH=$PATH:$CUDA_ROOT/bin

@@ -182,6 +182,7 @@ source `rospack find jsk_tools`/src/bashrc.ros
 #rossetip
 rossetlocal
 export EDITOR='vim'
+echo "CMAKE_PREFIX_PATH: $CMAKE_PREFIX_PATH"
 
 #Golang
 export GOROOT=/usr/local/go

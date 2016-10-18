@@ -28,13 +28,6 @@ set incsearch
 set ignorecase
 set smartcase
 
-"keymapping
-nmap <S-h> ^
-nmap <S-k> {
-nmap <S-j> }
-nmap <S-l> $
-nmap == gg=G''
-
 " Note: Skip initialization for vim-tiny or vim-small.
 if 0 | endif
 

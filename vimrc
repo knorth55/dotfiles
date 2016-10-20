@@ -4,7 +4,7 @@ syntax on
 
 set number
 set laststatus=2
-set clipboard=unnamed,autoselect
+set clipboard=unnamed,unnamedplus,autoselect
 set background =dark
 
 " tab set

@@ -4,8 +4,8 @@
 dotfiles_path=$(cd $(dirname $0)/.. && pwd)
 
 # symbolic link
-eval ln -sf  $dotfiles_path/bashrc ~/.bashrc
-eval ln -sf  $dotfiles_path/bash_aliases ~/.bash_aliases
+eval ln -sf  $dotfiles_path/bash/bashrc ~/.bashrc
+eval ln -sf  $dotfiles_path/bash/bash_aliases ~/.bash_aliases
 eval ln -sfn $dotfiles_path/bash_it ~/.bash_it
 eval ln -sf  $dotfiles_path/gitconfig ~/.gitconfig
 eval ln -sf  $dotfiles_path/vimrc ~/.vimrc

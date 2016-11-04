@@ -25,6 +25,22 @@ alias roseus="rlwrap -c -b '(){}[],&^%$#@"";|\' roseus"
 alias rl="roslaunch"
 alias rr="rosrun"
 alias rp="rostopic"
+alias rc='roscd'
+alias rp='rostopic'
+alias rpb='rostopic bw'
+alias rpe='rostopic echo'
+alias rph='rostopic hz'
+alias rpi='rostopic info'
+alias rpl='rostopic list'
+alias rn='rosnode'
+alias rni='rosnode info'
+alias rnl='rosnode list'
+alias rnk='rosnode kill'
+alias rs='rosservice'
+alias rsl='rosservice list'
+alias rqt_gui='rosrun rqt_gui rqt_gui'
+alias rqt_reconfigure='rosrun rqt_reconfigure rqt_reconfigure'
+
 #Gvim
 #alias gvim="gvim --remote-tab"
 #tmux

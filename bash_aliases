@@ -44,3 +44,5 @@ alias gfa='git fetch --all --prune --verbose'
 alias gfat='git fetch --all --prune --tags --verbose'
 alias gpm="git push origin master"
 alias gpm!="git push origin master -f"
+#fasd alias
+alias v='fasd -f -e vim' # quick opening files with vim

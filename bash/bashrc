@@ -117,15 +117,9 @@ bind -x '"\ep" : percol-search-rostopic'
 
 #travis percol history search
 percol-search-travis-history() {
-    if [ "$READLINE_LINE" = "travis logs " ]; then
-        local l=$(travis history --limit 20 | percol | sed -e "s/#\([0-9]\+\).*/\1/g")
-        READLINE_LINE="$READLINE_LINE$l"
-        READLINE_POINT=${#READLINE_LINE}
-    elif [ "$READLINE_LINE" = "travis open " ]; then
-        local l=$(travis history --limit 20 | percol | sed -e "s/#\([0-9]\+\).*/\1/g")
-        READLINE_LINE="$READLINE_LINE$l"
-        READLINE_POINT=${#READLINE_LINE}
-    fi
+    local l=$(travis history --limit 20 | percol | sed -e "s/#\([0-9]\+\).*/\1/g")
+    READLINE_LINE="$READLINE_LINE$l"
+    READLINE_POINT=${#READLINE_LINE}
 }
 bind -x '"\eo" :percol-search-travis-history'
 

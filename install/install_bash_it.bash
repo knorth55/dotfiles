@@ -22,7 +22,6 @@ bash-it enable plugin git
 bash-it enable plugin history
 bash-it enable plugin hub
 bash-it enable plugin latex
-bash-it enable plugin percol
 bash-it enable plugin pyenv
 bash-it enable plugin python
 bash-it enable plugin ssh

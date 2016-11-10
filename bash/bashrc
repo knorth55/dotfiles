@@ -100,7 +100,11 @@ shopt -u histappend
 
 #C-r: percol history search
 percol-search-history() {
-    local l=$(HISTTIMEFORMAT= history | tac | sed -e 's/^\s*[0-9]\+\s\+//' | percol --query "$READLINE_LINE")
+    if [[ `uname -s` == "Darwin" ]]; then
+        local l=$(HISTTIMEFORMAT= history | tail -r | gsed -e 's/^\s*[0-9]\+\s\+//' | percol --query "$READLINE_LINE")
+    else
+        local l=$(HISTTIMEFORMAT= history | tac | sed -e 's/^\s*[0-9]\+\s\+//' | percol --query "$READLINE_LINE")
+    fi
     READLINE_LINE="$l"
     READLINE_POINT=${#l}
 }

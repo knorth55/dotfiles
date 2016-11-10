@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # get dotfiles path
-dotfiles_path=$(cd $(dirname $0)/.. && pwd)
+dotfiles_path=$HOME/dotfiles
 
 # symbolic link
 eval ln -sf  $dotfiles_path/bash/bashrc ~/.bashrc
@@ -25,4 +25,4 @@ eval mkdir -p $dotfiles_path/nvim/colors
 eval curl -s https://raw.githubusercontent.com/tomasr/molokai/master/colors/molokai.vim -o $dotfiles_path/vim/colors/molokai.vim 
 eval curl -s https://raw.githubusercontent.com/tomasr/molokai/master/colors/molokai.vim -o $dotfiles_path/nvim/colors/molokai.vim 
 
-bash ./install_bash_it.bash
+bash $dotfiles_path/install/install_bash_it.bash

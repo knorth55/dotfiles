@@ -1,3 +1,29 @@
+" dein config
+let s:dein_dir = expand('~/.cache/dein')
+let s:dein_repo_dir = s:dein_dir . '/repos/github.com/Shougo/dein.vim'
+
+if &runtimepath !~# '/dein.vim'
+  if !isdirectory(s:dein_repo_dir)
+    execute '!git clone https://github.com/Shougo/dein.vim' s:dein_repo_dir
+  endif
+  execute 'set runtimepath^=' . fnamemodify(s:dein_repo_dir, ':p')
+endif
+
+if dein#load_state(s:dein_dir)
+  call dein#begin(s:dein_dir)
+  let g:rc_dir    = expand('~/.vim/rc')
+  let s:toml      = g:rc_dir . '/dein.toml'
+  let s:lazy_toml = g:rc_dir . '/dein_lazy.toml'
+  call dein#load_toml(s:toml,      {'lazy': 0})
+  call dein#load_toml(s:lazy_toml, {'lazy': 1})
+  call dein#end()
+  call dein#save_state()
+endif
+
+if dein#check_install()
+  call dein#install()
+endif
+
 "colorscheme
 colorscheme molokai
 syntax on
@@ -31,86 +57,8 @@ set smartcase
 " Note: Skip initialization for vim-tiny or vim-small.
 if 0 | endif
 
-if has('vim_starting')
-    " Required:
-    if &compatible
-        set nocompatible
-    endif
-    set runtimepath+=~/.vim/bundle/neobundle.vim/
-endif
-
-" Required:
-call neobundle#begin(expand('~/.vim/bundle/'))
-
-" Let NeoBundle manage NeoBundle
-" Required:
-NeoBundleFetch 'Shougo/neobundle.vim'
-
-NeoBundle 'Shougo/vimfiler'
-
-" My Bundles here:
-" Refer to |:NeoBundle-examples|.
-" Note: You don't set neobundle setting in .gvimrc!
-
-" NERDTree
-NeoBundle 'scrooloose/nerdtree'
-
-" autoclose
-NeoBundle 'Townk/vim-autoclose'
-
-" syntax chck
-NeoBundle 'scrooloose/syntastic'
-
-"quickrun
-NeoBundle 'thinca/vim-quickrun'
-
-"unite
-NeoBundle 'Shougo/unite.vim'
-NeoBundle 'Shougo/neomru.vim'
-
-"vimproc and vimshell
-NeoBundle 'Shougo/vimproc.vim'
-NeoBundle 'Shougo/vimshell.vim'
-
-"yankround
-NeoBundle 'LeafCage/yankround.vim'
-
-"neocomplete
-NeoBundle 'Shougo/neocomplete'
-
-"caw
-NeoBundle 'tyru/caw.vim'
-
-" vim-scala
-NeoBundle 'derekwyatt/vim-scala'
-
-"vim-ros
-NeoBundle 'taketwo/vim-ros'
-
-"vim-fugitive
-NeoBundle 'tpope/vim-fugitive'
-
-"vim-airline
-NeoBundle 'vim-airline/vim-airline'
-NeoBundle 'vim-airline/vim-airline-themes'
-
-"jedi-vim for python
-NeoBundle 'davidhalter/jedi-vim'
-
-"PyDiction
-NeoBundle 'rkulla/pydiction'
-
-" tex edit
-NeoBundle 'lervag/vimtex'
-
-call neobundle#end()
-
 " Required:
 filetype plugin indent on
-
-" If there are uninstalled bundles found on startup,
-" this will conveniently prompt you to install them.
-NeoBundleCheck
 
 "unite.vim settings
 let g:unite_enable_start_insert=1

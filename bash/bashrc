@@ -197,6 +197,13 @@ rossetlocal
 export EDITOR='vim'
 echo "CMAKE_PREFIX_PATH: $CMAKE_PREFIX_PATH"
 
+# Euslisp
+export EUSDIR=$HOME/jskeus/eus
+export ARCHDIR=Linux64
+export PATH=$EUSDIR/$ARCHDIR/bin:$EUSDIR/$ARCHDIR/lib:$PATH
+export LD_LIBRARY_PATH=$EUSDIR/$ARCHDIR/bin:$LD_LIBRARY_PATH
+echo "EUSDIR: $EUSDIR"
+
 #Golang
 export GOROOT=/usr/local/go
 export GOPATH=$HOME/go

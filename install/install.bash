@@ -2,6 +2,7 @@
 
 # get dotfiles path
 dotfiles_path=$HOME/dotfiles
+cd $dotfiles_path
 
 # symbolic link
 eval ln -sf  $dotfiles_path/bash/bashrc ~/.bashrc
@@ -36,3 +37,5 @@ fi
 # bash_it
 cd $dotfiles_path
 bash $dotfiles_path/install/install_bash_it.bash
+
+source ~/.bashrc

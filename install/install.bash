@@ -34,6 +34,14 @@ if [ ! -d "$HOME/fasd" ]; then
   cd $dotfiles_path
 fi
 
+#rbenv
+if [ ! -d "$HOME/.rbenv" ]; then
+  git clone https://github.com/sstephenson/rbenv.git ~/.rbenv
+  git clone https://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build
+  rbenv install 2.3.1
+  rbenv global 2.3.1
+fi
+
 # bash_it
 cd $dotfiles_path
 bash $dotfiles_path/install/install_bash_it.bash

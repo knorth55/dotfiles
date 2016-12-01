@@ -185,6 +185,10 @@ fi
 #JAVA setting
 export JAVA_HOME=/usr/lib/jvm/java-8-oracle
 
+#renv
+export PATH=$HOME/.rbenv/bin:$PATH
+eval "$(rbenv init -)"
+
 #ccache
 export CCACHE_DIR="$HOME/.ccache"
 

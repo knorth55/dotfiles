@@ -25,4 +25,14 @@ eval mkdir -p $dotfiles_path/nvim/colors
 eval curl -s https://raw.githubusercontent.com/tomasr/molokai/master/colors/molokai.vim -o $dotfiles_path/vim/colors/molokai.vim 
 eval curl -s https://raw.githubusercontent.com/tomasr/molokai/master/colors/molokai.vim -o $dotfiles_path/nvim/colors/molokai.vim 
 
+# fasd
+if [ ! -d "$HOME/fasd" ]; then
+  git clone https://github.com/clvv/fasd.git $HOME/fasd
+  cd $HOME/fasd
+  sudo make install
+  cd $dotfiles_path
+fi
+
+# bash_it
+cd $dotfiles_path
 bash $dotfiles_path/install/install_bash_it.bash

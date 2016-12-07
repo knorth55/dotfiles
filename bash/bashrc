@@ -232,3 +232,4 @@ export XDG_CONFIG_HOME=~/.config
 #alias_completion
 alias_completion
 
+source `which pycd.sh`

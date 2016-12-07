@@ -59,6 +59,12 @@ if [ ! $(which "percol") ]; then
   sudo pip install percol
 fi
 
+# pycd
+if [ ! $(which "pycd") ]; then
+  echo "[pycd] sudo pip install pycd"
+  sudo pip install pycd
+fi
+
 # fasd
 if [ ! -d "$HOME/fasd" ]; then
   echo "[fasd] git clone https://github.com/clvv/fasd.git"

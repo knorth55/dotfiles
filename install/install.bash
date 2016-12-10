@@ -49,7 +49,7 @@ if [ ! $(which "pip") ]; then
     wget https://bootstrap.pypa.io/get-pip.py
   fi
   echo "[pip] python get-pip.py"
-  python get-pip.py
+  sudo python get-pip.py
   popd
 fi
 

@@ -201,7 +201,8 @@ if [ -e "$HOME/ros/indigo/devel/setup.bash" ]; then
   source `rospack find jsk_tools`/src/bashrc.ros
 fi
 #rossetip
-rossetlocal
+# rossetlocal
+export ROS_MASTER_URI=http://localhost:11311
 export EDITOR='vim'
 echo "CMAKE_PREFIX_PATH: $CMAKE_PREFIX_PATH"
 

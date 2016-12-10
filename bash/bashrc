@@ -193,19 +193,25 @@ eval "$(rbenv init -)"
 export CCACHE_DIR="$HOME/.ccache"
 
 #ROS
-source /opt/ros/indigo/setup.bash
-source ~/ros/indigo/devel/setup.bash
-source `rospack find jsk_tools`/src/bashrc.ros
+if [ -e "/opt/ros/indigo/setup.bash" ]; then
+  source /opt/ros/indigo/setup.bash
+fi
+if [ -e "$HOME/ros/indigo/devel/setup.bash" ]; then
+  source ~/ros/indigo/devel/setup.bash
+  source `rospack find jsk_tools`/src/bashrc.ros
+fi
 #rossetip
 rossetlocal
 export EDITOR='vim'
 echo "CMAKE_PREFIX_PATH: $CMAKE_PREFIX_PATH"
 
 # Euslisp
-export EUSDIR=$HOME/jskeus/eus
-export ARCHDIR=Linux64
-export PATH=$EUSDIR/$ARCHDIR/bin:$EUSDIR/$ARCHDIR/lib:$PATH
-export LD_LIBRARY_PATH=$EUSDIR/$ARCHDIR/bin:$LD_LIBRARY_PATH
+if [ -d "$HOME/jskeus" ]; then
+  export EUSDIR=$HOME/jskeus/eus
+  export ARCHDIR=Linux64
+  export PATH=$EUSDIR/$ARCHDIR/bin:$EUSDIR/$ARCHDIR/lib:$PATH
+  export LD_LIBRARY_PATH=$EUSDIR/$ARCHDIR/bin:$LD_LIBRARY_PATH
+fi
 echo "EUSDIR: $EUSDIR"
 
 #Golang

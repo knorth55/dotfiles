@@ -199,11 +199,11 @@ fi
 if [ -e "$HOME/ros/indigo/devel/setup.bash" ]; then
   source ~/ros/indigo/devel/setup.bash
   source `rospack find jsk_tools`/src/bashrc.ros
+  #rossetip
+  rossetlocal
+  echo "CMAKE_PREFIX_PATH: $CMAKE_PREFIX_PATH"
 fi
-#rossetip
-rossetlocal
 export EDITOR='vim'
-echo "CMAKE_PREFIX_PATH: $CMAKE_PREFIX_PATH"
 
 # Euslisp
 if [ -d "$HOME/jskeus" ]; then
@@ -211,8 +211,8 @@ if [ -d "$HOME/jskeus" ]; then
   export ARCHDIR=Linux64
   export PATH=$EUSDIR/$ARCHDIR/bin:$EUSDIR/$ARCHDIR/lib:$PATH
   export LD_LIBRARY_PATH=$EUSDIR/$ARCHDIR/bin:$LD_LIBRARY_PATH
+  echo "EUSDIR: $EUSDIR"
 fi
-echo "EUSDIR: $EUSDIR"
 
 #Golang
 export GOROOT=/usr/local/go

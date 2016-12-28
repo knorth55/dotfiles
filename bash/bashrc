@@ -226,8 +226,8 @@ export PYTHONPATH=$PYTHONPATH:$HOME/pynaoqi-python2.7-2.1.4.13-linux64
 export CUDA_ROOT=/usr/local/cuda
 export PATH=$PATH:$CUDA_ROOT/bin
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$CUDA_ROOT/lib64
-export CFLAGS=$CUDA_ROOT/include
-export LDFLAGS=$CUDA_ROOT/lib64
+export CFLAGS=-I$CUDA_ROOT/include
+export LDFLAGS=-L$CUDA_ROOT/lib64
 
 # caffe
 export PYTHONPATH=$PYTHONPATH:$HOME/caffe/python

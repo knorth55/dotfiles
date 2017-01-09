@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 
-$latex = 'platex -kanji=utf-8 -synctex=1 %S';
+$latex = 'platex -kanji=utf-8 -synctex=1 -shell-escape %S';
 $dvipdf = 'dvipdfmx %S';
 $bibtex = 'pbibtex';
 $pdf_mode = 3; # use dvipdf

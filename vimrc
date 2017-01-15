@@ -138,7 +138,7 @@ nmap cp :CPosttoTwitter<CR>
 "vim-ros config
 let g:ros_make='current'
 let g:ros_build_system='catkin'
-set makeprg=catkin\ build
+" set makeprg=catkin\ build
 
 "syntastic
 let g:syntastic_check_on_wq = 0

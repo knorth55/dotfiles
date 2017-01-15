@@ -5,7 +5,7 @@ $dvipdf = 'dvipdfmx %S';
 $bibtex = 'pbibtex';
 $pdf_mode = 3; # use dvipdf
 $pdf_update_method = 2;
-$pdf_previewer = "okular";
+$pdf_previewer = "mupdf";
 $max_repeat       = 5;
 # Prevent latexmk from removing PDF after typeset.
 $pvc_view_file_via_temporary = 0;

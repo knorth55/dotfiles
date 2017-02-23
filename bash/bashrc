@@ -243,3 +243,10 @@ alias_completion
 export PATH=$HOME/.local/bin:$PATH
 
 source `which pycd.sh`
+
+# added by Anaconda2 4.3.0 installer
+# export PATH=$PATH:$HOME/anaconda2/bin
+activate () {
+  unset PYTHONPATH
+  source ~/anaconda2/bin/activate
+}

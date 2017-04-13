@@ -31,26 +31,11 @@ eval mkdir -p $dotfiles_path/nvim/colors
 eval curl -s https://raw.githubusercontent.com/tomasr/molokai/master/colors/molokai.vim -o $dotfiles_path/vim/colors/molokai.vim 
 eval curl -s https://raw.githubusercontent.com/tomasr/molokai/master/colors/molokai.vim -o $dotfiles_path/nvim/colors/molokai.vim 
 
-# # ccache
-# if [ ! $(which "ccache") ]; then
-#   echo "[ccache] sudo apt-get install ccache"
-#   sudo apt-get install -y ccache
-# fi
-
-# # pip
-# if [ $(dpkg -s "python-pip" &> /dev/null) ]; then
-#   echo "[pip] sudo apt-get purge python-pip"
-#   sudo apt-get purge python-pip
-# fi
-# if [ ! $(which "pip") ]; then
-#   pushd $HOME/Downloads
-#   if [ ! -d "$HOME/Downloads/get-pip.py" ]; then
-#     wget https://bootstrap.pypa.io/get-pip.py
-#   fi
-#   echo "[pip] python get-pip.py"
-#   sudo python get-pip.py
-#   popd
-# fi
+# ccache
+if [ ! $(which "ccache") ]; then
+  echo "[ccache] brew install ccache"
+  brew install ccache
+fi
 
 # percol
 if [ ! $(which "percol") ]; then

@@ -27,31 +27,10 @@ eval mkdir -p $dotfiles_path/nvim/colors
 eval curl -s https://raw.githubusercontent.com/tomasr/molokai/master/colors/molokai.vim -o $dotfiles_path/vim/colors/molokai.vim 
 eval curl -s https://raw.githubusercontent.com/tomasr/molokai/master/colors/molokai.vim -o $dotfiles_path/nvim/colors/molokai.vim 
 
-# apt-get
-echo "[apt-get] sudo apt-get update"
-sudo apt-get update
-echo "[apt-get] sudo apt-get upgrade"
-sudo apt-get upgrade -y
-
 # ccache
 if [ ! $(which "ccache") ]; then
-  echo "[ccache] sudo apt-get install ccache"
-  sudo apt-get install -y ccache
-fi
-
-# pip
-if [ $(dpkg -s "python-pip" &> /dev/null) ]; then
-  echo "[pip] sudo apt-get purge python-pip"
-  sudo apt-get purge python-pip
-fi
-if [ ! $(which "pip") ]; then
-  pushd $HOME/Downloads
-  if [ ! -d "$HOME/Downloads/get-pip.py" ]; then
-    wget https://bootstrap.pypa.io/get-pip.py
-  fi
-  echo "[pip] python get-pip.py"
-  sudo python get-pip.py
-  popd
+  echo "[ccache] brew install ccache"
+  brew install ccache
 fi
 
 # percol
@@ -64,16 +43,6 @@ fi
 if [ ! $(which "pycd") ]; then
   echo "[pycd] sudo pip install pycd"
   sudo pip install pycd
-fi
-
-# fasd
-if [ ! -d "$HOME/fasd" ]; then
-  echo "[fasd] git clone https://github.com/clvv/fasd.git"
-  git clone https://github.com/clvv/fasd.git $HOME/fasd
-  pushd $HOME/fasd
-  echo "[fasd] sudo make install"
-  sudo make install
-  popd
 fi
 
 # bash_it

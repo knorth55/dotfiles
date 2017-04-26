@@ -242,6 +242,9 @@ alias_completion
 # for not sudoer
 export PATH=$HOME/.local/bin:$PATH
 
+# svn
+export SVN_SSH="ssh -l s-kitagawa"
+
 source `which pycd.sh`
 
 # added by Anaconda2 4.3.0 installer

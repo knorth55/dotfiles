@@ -40,6 +40,13 @@ set expandtab
 set shiftwidth=4
 set nocompatible
 
+set splitbelow
+set splitright
+set history=50
+set commentstring=\ #\ %s
+set browsedir=buffer
+set hidden
+
 " japanese
 set fileencoding=utf-8
 set fileencodings=utf-8,iso-2022-jp,euc-jp,cp932,sjis
@@ -154,9 +161,18 @@ let g:airline#extensions#branch#vcs_priority = ["git"]
 let g:airline#extensions#branch#displayed_head_limit = 10
 
 "jedi-vim
-let g:jedi#completions_command = "<C-N>"
-let g:jedi#rename_command = "<leader>rr"
-let g:jedi#documentation_command = "<leader>k"
+"let g:jedi#completions_command = "<C-N>"
+"let g:jedi#rename_command = "<leader>rr"
+"let g:jedi#documentation_command = "<leader>k"
+let g:jedi#documentation_command = "K"
+autocmd FileType python setl omnifunc=jedi#completions
+autocmd FileType python setl completeopt-=preview
+let g:jedi#popup_on_dot = 0
+let g:jedi#popup_select_first = 0
+let g:jedi#completions_enabled = 1
+let g:jedi#auto_vim_configuration = 1
+let g:jedi#show_call_signatures = 0
+let g:jedi#rename_command = '<Leader>R'
 
 "change molokai colorscheme
 highlight Normal ctermbg=None

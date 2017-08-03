@@ -5,6 +5,7 @@
 	sslVerify = false
 [core]
 	editor = vim
+	excludesfile = ~/.gitignore_global
 [mergetool]
 	keepBackup = false
 	editor = vim

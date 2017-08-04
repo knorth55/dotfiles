@@ -9,6 +9,7 @@ eval ln -sf  $dotfiles_path/bash/bashrc ~/.bashrc
 eval ln -sf  $dotfiles_path/bash/bash_aliases ~/.bash_aliases
 eval ln -sfn $dotfiles_path/bash_it ~/.bash_it
 eval ln -sf  $dotfiles_path/git/gitconfig ~/.gitconfig
+eval ln -sf  $dotfiles_path/git/gitignore_global ~/.gitignore_global
 eval ln -sf  $dotfiles_path/vimrc ~/.vimrc
 eval ln -sfn $dotfiles_path/vim ~/.vim 
 eval ln -sfn $dotfiles_path/nvim ~/.config/nvim

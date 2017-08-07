@@ -246,7 +246,10 @@ export PATH=$HOME/.local/bin:$PATH
 export SVN_SSH="ssh -l s-kitagawa"
 
 source `which pycd.sh`
-source `which activate.sh`
+
+if which activate.sh > /dev/null; then
+  source `which activate.sh`
+fi
 
 # added by Anaconda2 4.4.0 installer
 # export PATH=$PATH:$HOME/anaconda2/bin

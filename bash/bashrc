@@ -147,19 +147,19 @@ source $BASH_IT/bash_it.sh
 # See /usr/share/doc/bash-doc/examples in the bash-doc package.
 
 # fasd
-fasd_cache="$HOME/.fasd-init-bash"
-if [ "$(command -v fasd)" -nt "$fasd_cache" -o ! -s "$fasd_cache" ]; then
-  fasd --init posix-alias bash-hook bash-ccomp bash-ccomp-install >| "$fasd_cache"
-fi
-source "$fasd_cache"
-unset fasd_cache
-unalias zz
-
-# fasd percol
-function zz(){
-    local l=$(fasd -d | awk '{print $2}' | percol)
-    cd $l
-}
+# fasd_cache="$HOME/.fasd-init-bash"
+# if [ "$(command -v fasd)" -nt "$fasd_cache" -o ! -s "$fasd_cache" ]; then
+#   fasd --init posix-alias bash-hook bash-ccomp bash-ccomp-install >| "$fasd_cache"
+# fi
+# source "$fasd_cache"
+# unset fasd_cache
+# unalias zz
+#
+# # fasd percol
+# function zz(){
+#     local l=$(fasd -d | awk '{print $2}' | percol)
+#     cd $l
+# }
 
 #bash_aliases
 if [ -f ~/.bash_aliases ]; then
@@ -251,11 +251,13 @@ if which activate.sh > /dev/null; then
   source `which activate.sh`
 fi
 
-# added by Anaconda2 4.4.0 installer
-# export PATH=$PATH:$HOME/anaconda2/bin
+# added by Miniconda2 4.3.21 installer
+export PATH="/home/knorth55/.miniconda2/bin:$PATH"
 
 activate () {
   unset PYTHONPATH
-  source $HOME/anaconda2/bin/activate
+  source $HOME/.miniconda2/bin/activate
 }
+
+
 

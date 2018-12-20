@@ -146,21 +146,6 @@ source $BASH_IT/bash_it.sh
 # ~/.bash_aliases, instead of adding them here directly.
 # See /usr/share/doc/bash-doc/examples in the bash-doc package.
 
-# fasd
-fasd_cache="$HOME/.fasd-init-bash"
-if [ "$(command -v fasd)" -nt "$fasd_cache" -o ! -s "$fasd_cache" ]; then
-  fasd --init posix-alias bash-hook bash-ccomp bash-ccomp-install >| "$fasd_cache"
-fi
-source "$fasd_cache"
-unset fasd_cache
-unalias zz
-
-# fasd percol
-function zz(){
-    local l=$(fasd -d | awk '{print $2}' | percol)
-    cd $l
-}
-
 #bash_aliases
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
@@ -183,21 +168,17 @@ if which lesspipe.sh > /dev/null; then
 fi
 
 #JAVA setting
-export JAVA_HOME=/usr/lib/jvm/java-8-oracle
-
-#renv
-export PATH=$HOME/.rbenv/bin:$PATH
-eval "$(rbenv init -)"
+export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
 
 #ccache
 export CCACHE_DIR="$HOME/.ccache"
 
 #ROS
-if [ -e "/opt/ros/indigo/setup.bash" ]; then
-  source /opt/ros/indigo/setup.bash
+if [ -e "/opt/ros/kinetic/setup.bash" ]; then
+  source /opt/ros/kinetic/setup.bash
 fi
-if [ -e "$HOME/ros/indigo/devel/setup.bash" ]; then
-  source ~/ros/indigo/devel/setup.bash
+if [ -e "$HOME/ros/kinetic/devel/setup.bash" ]; then
+  source ~/ros/kinetic/devel/setup.bash
   source `rospack find jsk_tools`/src/bashrc.ros
   #rossetip
   rossetlocal
@@ -206,8 +187,8 @@ fi
 export EDITOR='vim'
 
 # Euslisp
-if [ -d "$HOME/jskeus" ]; then
-  export EUSDIR=$HOME/jskeus/eus
+if [ -d "$HOME/install/jskeus" ]; then
+  export EUSDIR=$HOME/install/jskeus/eus
   export ARCHDIR=Linux64
   export PATH=$EUSDIR/$ARCHDIR/bin:$EUSDIR/$ARCHDIR/lib:$PATH
   export LD_LIBRARY_PATH=$EUSDIR/$ARCHDIR/bin:$LD_LIBRARY_PATH
@@ -224,13 +205,16 @@ export PYTHONPATH=$PYTHONPATH:$HOME/pynaoqi-python2.7-2.1.4.13-linux64
 
 #CUDA
 export CUDA_ROOT=/usr/local/cuda
+# export CUDA_HOME=/usr/local/cuda
 export PATH=$PATH:$CUDA_ROOT/bin
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$CUDA_ROOT/lib64
 export CFLAGS=-I$CUDA_ROOT/include
 export LDFLAGS=-L$CUDA_ROOT/lib64
 
 # caffe
-export PYTHONPATH=$PYTHONPATH:$HOME/caffe/python
+export CAFFE_ROOT=$HOME/install/caffe
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$CAFFE_ROOT/build/lib
+export PYTHONPATH=$PYTHONPATH:$CAFFE_ROOT/python
 
 #LD_LIBRARY_PATH
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib
@@ -251,11 +235,15 @@ if which activate.sh > /dev/null; then
   source `which activate.sh`
 fi
 
-# added by Anaconda2 4.4.0 installer
-# export PATH=$PATH:$HOME/anaconda2/bin
-
 activate () {
   unset PYTHONPATH
-  source $HOME/anaconda2/bin/activate
+  source $HOME/.anaconda/bin/activate
 }
 
+export SSH_USER=s-kitagawa
+export SVN_SSH="ssh -l ${SSH_USER}"
+
+# robosherlock
+export APR=/usr
+export ICU_HOME=/usr
+export XERCES_HOME=/usr

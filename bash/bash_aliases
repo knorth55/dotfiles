@@ -48,6 +48,7 @@ alias rqt_reconfigure='rosrun rqt_reconfigure rqt_reconfigure'
 alias pbcopy='xsel --clipboard --input'
 alias pbpaste='xsel --clipboard --output'
 #git alias
+alias git="hub"
 alias gd="git diff"
 alias gdca="git diff --cached"
 alias grb="git rebase"
@@ -61,5 +62,3 @@ alias gfa='git fetch --all --prune --verbose'
 alias gfat='git fetch --all --prune --tags --verbose'
 alias gpm="git push origin master"
 alias gpm!="git push origin master -f"
-#fasd alias
-alias v='fasd -f -e vim' # quick opening files with vim

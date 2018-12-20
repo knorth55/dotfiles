@@ -28,12 +28,6 @@ eval mkdir -p $dotfiles_path/nvim/colors
 eval curl -s https://raw.githubusercontent.com/tomasr/molokai/master/colors/molokai.vim -o $dotfiles_path/vim/colors/molokai.vim 
 eval curl -s https://raw.githubusercontent.com/tomasr/molokai/master/colors/molokai.vim -o $dotfiles_path/nvim/colors/molokai.vim 
 
-# apt-get
-echo "[apt-get] sudo apt-get update"
-sudo apt-get update
-echo "[apt-get] sudo apt-get upgrade"
-sudo apt-get upgrade -y
-
 # ccache
 if [ ! $(which "ccache") ]; then
   echo "[ccache] sudo apt-get install ccache"
@@ -67,28 +61,8 @@ if [ ! $(which "pycd") ]; then
   sudo pip install pycd
 fi
 
-# fasd
-if [ ! -d "$HOME/fasd" ]; then
-  echo "[fasd] git clone https://github.com/clvv/fasd.git"
-  git clone https://github.com/clvv/fasd.git $HOME/fasd
-  pushd $HOME/fasd
-  echo "[fasd] sudo make install"
-  sudo make install
-  popd
-fi
-
 # bash_it
 cd $dotfiles_path
 bash $dotfiles_path/install/install_bash_it.bash
-
-#rbenv
-if [ ! -d "$HOME/.rbenv" ]; then
-  git clone https://github.com/sstephenson/rbenv.git ~/.rbenv
-  git clone https://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build
-  export PATH=$HOME/.rbenv/bin:$PATH
-  eval "$(rbenv init -)"
-  rbenv install 2.3.1
-  rbenv global 2.3.1
-fi
 
 source ~/.bashrc

@@ -242,6 +242,9 @@ export CNOID_RTM_DIR=/opt/ros/kinetic
 export PKG_CONFIG_PATH=${CNOID_INSTALL_DIR}/lib/pkgconfig:$PKG_CONFIG_PATH
 export PATH=${CNOID_INSTALL_DIR}/bin:$PATH
 
+# firefox
+export MOZ_USE_XINPUT2=1
+
 source `which pycd.sh`
 
 if which activate.sh > /dev/null; then

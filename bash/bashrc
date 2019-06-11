@@ -263,3 +263,7 @@ export SVN_SSH="ssh -l ${SSH_USER}"
 export APR=/usr
 export ICU_HOME=/usr
 export XERCES_HOME=/usr
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion

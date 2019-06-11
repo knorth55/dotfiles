@@ -182,8 +182,9 @@ if [ -e "$HOME/ros/kinetic/devel/setup.bash" ]; then
   source `rospack find jsk_tools`/src/bashrc.ros
   #rossetip
   rossetlocal
-  echo "CMAKE_PREFIX_PATH: $CMAKE_PREFIX_PATH"
 fi
+echo "CMAKE_PREFIX_PATH: $CMAKE_PREFIX_PATH"
+
 export EDITOR='vim'
 
 # Euslisp

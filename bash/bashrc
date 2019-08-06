@@ -79,13 +79,13 @@ esac
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
 # sources /etc/bash.bashrc).
-if ! shopt -oq posix; then
-  if [ -f /usr/share/bash-completion/bash_completion ]; then
-    . /usr/share/bash-completion/bash_completion
-  elif [ -f /etc/bash_completion ]; then
-    . /etc/bash_completion
-  fi
-fi
+# if ! shopt -oq posix; then
+#   if [ -f /usr/share/bash-completion/bash_completion ]; then
+#     . /usr/share/bash-completion/bash_completion
+#   elif [ -f /etc/bash_completion ]; then
+#     . /etc/bash_completion
+#   fi
+# fi
 
 # share bash history
 function share_history {
@@ -174,11 +174,11 @@ export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
 export CCACHE_DIR="$HOME/.ccache"
 
 #ROS
-if [ -e "/opt/ros/kinetic/setup.bash" ]; then
-  source /opt/ros/kinetic/setup.bash
+if [ -e "/opt/ros/melodic/setup.bash" ]; then
+  source /opt/ros/melodic/setup.bash
 fi
-if [ -e "$HOME/ros/kinetic/devel/setup.bash" ]; then
-  source ~/ros/kinetic/devel/setup.bash
+if [ -e "$HOME/ros/melodic/devel/setup.bash" ]; then
+  source ~/ros/melodic/devel/setup.bash
   source `rospack find jsk_tools`/src/bashrc.ros
   #rossetip
   rossetlocal
@@ -245,8 +245,8 @@ export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib
 
 #neovim setting
 export XDG_CONFIG_HOME=~/.config
-#alias_completion
-alias_completion
+# alias_completion
+# alias_completion
 # for not sudoer
 export PATH=$HOME/.local/bin:$PATH
 

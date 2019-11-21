@@ -3,4 +3,4 @@
 	url = https://github.com/Shougo/neobundle.vim.git
 [submodule "bash_it"]
 	path = bash_it
-	url = https://github.com/Bash-it/bash-it.git
+	url = https://github.com/knorth55/bash-it.git

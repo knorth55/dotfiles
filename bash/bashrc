@@ -227,9 +227,6 @@ export GOROOT=/usr/local/go
 export GOPATH=$HOME/go
 export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
 
-#python naoqi
-export PYTHONPATH=$PYTHONPATH:$HOME/pynaoqi-python2.7-2.1.4.13-linux64
-
 #CUDA
 export CUDA_ROOT=/usr/local/cuda
 # export CUDA_HOME=/usr/local/cuda
@@ -292,3 +289,6 @@ export NVM_DIR="$HOME/.nvm"
 # docui
 export LC_CTYPE=en_US.UTF-8
 export TERM=xterm-256color
+
+#python naoqi
+export PYTHONPATH=$HOME/pynaoqi/pynaoqi-python2.7-2.5.5.5-linux64/lib/python2.7/site-packages:$PYTHONPATH

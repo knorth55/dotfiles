@@ -17,6 +17,7 @@ bash-it enable alias tmux
 bash-it enable alias vim
 
 # plugins
+bash-it enable plugin alias-completion 
 bash-it enable plugin base
 bash-it enable plugin git
 bash-it enable plugin history

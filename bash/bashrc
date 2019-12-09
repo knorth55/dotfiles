@@ -281,6 +281,11 @@ rossetbaxter () {
   rossetmaster baxter
 }
 
+rossetpr1040 () {
+  rossetip
+  rossetmaster pr1040
+}
+
 export SSH_USER=s-kitagawa
 export SVN_SSH="ssh -l ${SSH_USER}"
 

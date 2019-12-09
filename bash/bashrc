@@ -174,11 +174,11 @@ export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
 export CCACHE_DIR="$HOME/.ccache"
 
 #ROS
-if [ -e "/opt/ros/melodic/setup.bash" ]; then
-  source /opt/ros/melodic/setup.bash
+if [ -e "/opt/ros/$ROS_DISTRO/jsetup.bash" ]; then
+  source /opt/ros/$ROS_DISTRO/jsetup.bash
 fi
-if [ -e "$HOME/ros/melodic/devel/setup.bash" ]; then
-  source ~/ros/melodic/devel/setup.bash
+if [ -e "$HOME/ros/$ROS_DISTRO/devel/setup.bash" ]; then
+  source ~/ros/$ROS_DISTRO/devel/setup.bash
   source `rospack find jsk_tools`/src/bashrc.ros
   #rossetip
   rossetlocal
@@ -258,7 +258,7 @@ export SVN_SSH="ssh -l s-kitagawa"
 
 # choreonoid
 export CNOID_INSTALL_DIR=/usr/local/choreonoid
-export CNOID_RTM_DIR=/opt/ros/melodic
+export CNOID_RTM_DIR=/opt/ros/$ROS_DISTRO
 export PKG_CONFIG_PATH=${CNOID_INSTALL_DIR}/lib/pkgconfig:$PKG_CONFIG_PATH
 export PATH=${CNOID_INSTALL_DIR}/bin:$PATH
 

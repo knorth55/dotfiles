@@ -14,6 +14,7 @@ eval ln -sf  $dotfiles_path/vimrc ~/.vimrc
 eval ln -sfn $dotfiles_path/vim ~/.vim 
 eval ln -sfn $dotfiles_path/nvim ~/.config/nvim
 eval ln -sf  $dotfiles_path/tmux.conf ~/.tmux.conf
+eval ln -sf  $dotfiles_path/tmux ~/.tmux
 eval ln -sfn $dotfiles_path/percol.d ~/.percol.d
 eval ln -sf  $dotfiles_path/latex/latexmkrc ~/.latexmkrc
 eval ln -sf  $dotfiles_path/xinitrc ~/.xinitrc

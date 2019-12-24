@@ -4,3 +4,12 @@
 [submodule "bash_it"]
 	path = bash_it
 	url = https://github.com/knorth55/bash-it.git
+[submodule "tmux/plugins/tpm"]
+	path = tmux/plugins/tpm
+	url = https://github.com/tmux-plugins/tpm
+[submodule "tmux/plugins/tmux-fpp"]
+	path = tmux/plugins/tmux-fpp
+	url = https://github.com/tmux-plugins/tmux-fpp
+[submodule "tmux/plugins/tmux-sensible"]
+	path = tmux/plugins/tmux-sensible
+	url = https://github.com/tmux-plugins/tmux-sensible

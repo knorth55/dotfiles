@@ -174,17 +174,14 @@ export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
 export CCACHE_DIR="$HOME/.ccache"
 
 #ROS
-if [ -e "/opt/ros/$ROS_DISTRO/jsetup.bash" ]; then
-  source /opt/ros/$ROS_DISTRO/jsetup.bash
+if [ -e "/opt/ros/$ROS_DISTRO/setup.bash" ]; then
+  source /opt/ros/$ROS_DISTRO/setup.bash
 fi
 if [ -e "$HOME/ros/$ROS_DISTRO/devel/setup.bash" ]; then
   source ~/ros/$ROS_DISTRO/devel/setup.bash
   source `rospack find jsk_tools`/src/bashrc.ros
   #rossetip
   rossetlocal
-fi
-if [ -e "$HOME/ros/vive_ws/devel/setup.bash" ]; then
-  source ~/ros/vive_ws/devel/setup.bash
 fi
 echo "CMAKE_PREFIX_PATH: $CMAKE_PREFIX_PATH"
 

@@ -174,8 +174,10 @@ export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
 export CCACHE_DIR="$HOME/.ccache"
 
 #ROS
-if [ -e "/opt/ros/$ROS_DISTRO/setup.bash" ]; then
-  source /opt/ros/$ROS_DISTRO/setup.bash
+if [ -e "/opt/ros/kinetic/setup.bash" ]; then
+  source /opt/ros/kinetic/setup.bash
+elif [ -e "/opt/ros/melodic/setup.bash" ]; then
+  source /opt/ros/melodic/setup.bash
 fi
 if [ -e "$HOME/ros/$ROS_DISTRO/devel/setup.bash" ]; then
   source ~/ros/$ROS_DISTRO/devel/setup.bash

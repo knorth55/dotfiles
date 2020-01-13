@@ -189,26 +189,6 @@ echo "CMAKE_PREFIX_PATH: $CMAKE_PREFIX_PATH"
 
 export EDITOR='vim'
 
-rossetfetch15 () {
-  rossetip
-  rossetmaster fetch15
-}
-
-rossetbaxter () {
-  rossetip
-  rossetmaster baxter
-}
-
-rossetpr1040 () {
-  rossetip
-  rossetmaster pr1040
-}
-
-rossetpr1012 () {
-  rossetip
-  rossetmaster pr1012
-}
-
 # Euslisp
 if [ -d "$HOME/install/jskeus" ]; then
   export EUSDIR=$HOME/install/jskeus/eus
@@ -275,9 +255,19 @@ activate () {
   source $HOME/.anaconda/bin/activate
 }
 
+rossetfetch15 () {
+  rossetip
+  rossetmaster fetch15
+}
+
 rossetbaxter () {
   rossetip
   rossetmaster baxter
+}
+
+rossetpr1012 () {
+  rossetip
+  rossetmaster pr1012
 }
 
 rossetpr1040 () {

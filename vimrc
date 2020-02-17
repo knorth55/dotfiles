@@ -149,6 +149,7 @@ let g:ros_build_system='catkin'
 
 "syntastic
 let g:syntastic_check_on_wq = 0
+let g:syntastic_python_checkers = ['flake8']
 
 "vim-fugitive config
 nmap gdf :Gvdiff<CR>

@@ -189,21 +189,6 @@ echo "CMAKE_PREFIX_PATH: $CMAKE_PREFIX_PATH"
 
 export EDITOR='vim'
 
-# Euslisp
-if [ -d "$HOME/install/jskeus" ]; then
-  export EUSDIR=$HOME/install/jskeus/eus
-  export ARCHDIR=Linux64
-  export PATH=$EUSDIR/$ARCHDIR/bin:$EUSDIR/$ARCHDIR/lib:$PATH
-  export LD_LIBRARY_PATH=$EUSDIR/$ARCHDIR/bin:$LD_LIBRARY_PATH
-  echo "EUSDIR: $EUSDIR"
-elif [ -d "$HOME/projects/jskeus" ]; then
-  export EUSDIR=$HOME/projects/jskeus/eus
-  export ARCHDIR=Linux64
-  export PATH=$EUSDIR/$ARCHDIR/bin:$EUSDIR/$ARCHDIR/lib:$PATH
-  export LD_LIBRARY_PATH=$EUSDIR/$ARCHDIR/bin:$LD_LIBRARY_PATH
-  echo "EUSDIR: $EUSDIR"
-fi
-
 #Golang
 export GOROOT=/usr/local/go
 export GOPATH=$HOME/go
@@ -294,3 +279,20 @@ export TERM=xterm-256color
 
 #python naoqi
 export PYTHONPATH=$HOME/pynaoqi/pynaoqi-python2.7-2.5.5.5-linux64/lib/python2.7/site-packages:$PYTHONPATH
+
+# Euslisp
+if [ -d "$HOME/install/jskeus" ]; then
+  export EUSDIR=$HOME/install/jskeus/eus
+  export ARCHDIR=Linux64
+  export CVSDIR=$HOME/install
+  export PATH=$EUSDIR/$ARCHDIR/bin:$EUSDIR/$ARCHDIR/lib:$PATH
+  export LD_LIBRARY_PATH=$EUSDIR/$ARCHDIR/bin:$LD_LIBRARY_PATH
+  echo "EUSDIR: $EUSDIR"
+elif [ -d "$HOME/projects/jskeus" ]; then
+  export EUSDIR=$HOME/projects/jskeus/eus
+  export ARCHDIR=Linux64
+  export PATH=$EUSDIR/$ARCHDIR/bin:$EUSDIR/$ARCHDIR/lib:$PATH
+  export LD_LIBRARY_PATH=$EUSDIR/$ARCHDIR/bin:$LD_LIBRARY_PATH
+  export CVSDIR=$HOME/projects
+  echo "EUSDIR: $EUSDIR"
+fi

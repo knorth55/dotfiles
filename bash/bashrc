@@ -280,6 +280,9 @@ export TERM=xterm-256color
 #python naoqi
 export PYTHONPATH=$HOME/pynaoqi/pynaoqi-python2.7-2.5.5.5-linux64/lib/python2.7/site-packages:$PYTHONPATH
 
+# rust
+export PATH=$PATH:$HOME/.cargo/bin
+
 # Euslisp
 if [ -d "$HOME/install/jskeus" ]; then
   export EUSDIR=$HOME/install/jskeus/eus

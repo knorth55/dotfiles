@@ -133,63 +133,6 @@ activate () {
   source $HOME/.anaconda/bin/activate
 }
 
-# ros function
-rossetfetch15 () {
-  rossetip
-  rossetmaster fetch15
-}
-
-rossetfetch1075 () {
-  rossetip
-  rossetmaster fetch1075
-}
-
-rossetbaxter () {
-  rossetip
-  rossetmaster baxter
-}
-
-rossetpr1012 () {
-  rossetip
-  rossetmaster pr1012
-}
-
-rossetpr1040 () {
-  rossetip
-  rossetmaster pr1040
-}
-
-# eus function
-eussource () {
-  if [ -d "$HOME/install/jskeus" ]; then
-    export EUSDIR=$HOME/install/jskeus/eus
-    export ARCHDIR=Linux64
-    export CVSDIR=$HOME/install
-    export PATH=$EUSDIR/$ARCHDIR/bin:$EUSDIR/$ARCHDIR/lib:$PATH
-    export LD_LIBRARY_PATH=$EUSDIR/$ARCHDIR/bin:$LD_LIBRARY_PATH
-    echo "EUSDIR: $EUSDIR"
-  elif [ -d "$HOME/projects/jskeus" ]; then
-    export EUSDIR=$HOME/projects/jskeus/eus
-    export ARCHDIR=Linux64
-    export PATH=$EUSDIR/$ARCHDIR/bin:$EUSDIR/$ARCHDIR/lib:$PATH
-    export LD_LIBRARY_PATH=$EUSDIR/$ARCHDIR/bin:$LD_LIBRARY_PATH
-    export CVSDIR=$HOME/projects
-    echo "EUSDIR: $EUSDIR"
-  fi
-}
-
-setup_vive () {
-  source $HOME/ros/vive_ws/devel/setup.bash
-  eussource
-  echo "CMAKE_PREFIX_PATH: $CMAKE_PREFIX_PATH"
-}
-
-setup_rmui () {
-  source $HOME/ros/rmui_ws/devel/setup.bash
-  eussource
-  echo "CMAKE_PREFIX_PATH: $CMAKE_PREFIX_PATH"
-}
-
 #Bash-it
 # Path to the bash it configuration
 export BASH_IT="$HOME/.bash_it"
@@ -316,6 +259,63 @@ export PYTHONPATH=$HOME/pynaoqi/pynaoqi-python2.7-2.5.5.5-linux64/lib/python2.7/
 
 # rust
 export PATH=$PATH:$HOME/.cargo/bin
+
+# ros function
+rossetfetch15 () {
+  rossetip
+  rossetmaster fetch15
+}
+
+rossetfetch1075 () {
+  rossetip
+  rossetmaster fetch1075
+}
+
+rossetbaxter () {
+  rossetip
+  rossetmaster baxter
+}
+
+rossetpr1012 () {
+  rossetip
+  rossetmaster pr1012
+}
+
+rossetpr1040 () {
+  rossetip
+  rossetmaster pr1040
+}
+
+# eus function
+eussource () {
+  if [ -d "$HOME/install/jskeus" ]; then
+    export EUSDIR=$HOME/install/jskeus/eus
+    export ARCHDIR=Linux64
+    export CVSDIR=$HOME/install
+    export PATH=$EUSDIR/$ARCHDIR/bin:$EUSDIR/$ARCHDIR/lib:$PATH
+    export LD_LIBRARY_PATH=$EUSDIR/$ARCHDIR/bin:$LD_LIBRARY_PATH
+    echo "EUSDIR: $EUSDIR"
+  elif [ -d "$HOME/projects/jskeus" ]; then
+    export EUSDIR=$HOME/projects/jskeus/eus
+    export ARCHDIR=Linux64
+    export PATH=$EUSDIR/$ARCHDIR/bin:$EUSDIR/$ARCHDIR/lib:$PATH
+    export LD_LIBRARY_PATH=$EUSDIR/$ARCHDIR/bin:$LD_LIBRARY_PATH
+    export CVSDIR=$HOME/projects
+    echo "EUSDIR: $EUSDIR"
+  fi
+}
+
+setup_vive () {
+  source $HOME/ros/vive_ws/devel/setup.bash
+  eussource
+  echo "CMAKE_PREFIX_PATH: $CMAKE_PREFIX_PATH"
+}
+
+setup_rmui () {
+  source $HOME/ros/rmui_ws/devel/setup.bash
+  eussource
+  echo "CMAKE_PREFIX_PATH: $CMAKE_PREFIX_PATH"
+}
 
 # Euslisp
 eussource

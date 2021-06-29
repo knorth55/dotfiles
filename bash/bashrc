@@ -178,6 +178,18 @@ eussource () {
   fi
 }
 
+setup_vive () {
+  source $HOME/ros/vive_ws/devel/setup.bash
+  eussource
+  echo "CMAKE_PREFIX_PATH: $CMAKE_PREFIX_PATH"
+}
+
+setup_rmui () {
+  source $HOME/ros/rmui_ws/devel/setup.bash
+  eussource
+  echo "CMAKE_PREFIX_PATH: $CMAKE_PREFIX_PATH"
+}
+
 #Bash-it
 # Path to the bash it configuration
 export BASH_IT="$HOME/.bash_it"
@@ -233,7 +245,6 @@ if [ -e "$HOME/ros/$ROS_DISTRO/devel/setup.bash" ]; then
   #rossetip
   rossetlocal
 fi
-echo "CMAKE_PREFIX_PATH: $CMAKE_PREFIX_PATH"
 
 export EDITOR='vim'
 
@@ -308,3 +319,4 @@ export PATH=$PATH:$HOME/.cargo/bin
 
 # Euslisp
 eussource
+echo "CMAKE_PREFIX_PATH: $CMAKE_PREFIX_PATH"

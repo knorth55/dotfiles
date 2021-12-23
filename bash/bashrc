@@ -197,20 +197,28 @@ export GOPATH=$HOME/go
 export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
 
 #CUDA
-export CUDA_ROOT=/usr/local/cuda
-# export CUDA_HOME=/usr/local/cuda
-export PATH=$PATH:$CUDA_ROOT/bin
-export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$CUDA_ROOT/lib64
-export CFLAGS=-I$CUDA_ROOT/include
-export LDFLAGS=-L$CUDA_ROOT/lib64
+if [ -d  "/usr/local/cuda" ]; then
+  export CUDA_ROOT=/usr/local/cuda
+  # export CUDA_HOME=/usr/local/cuda
+  export PATH=$PATH:$CUDA_ROOT/bin
+  export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$CUDA_ROOT/lib64
+  export CFLAGS=-I$CUDA_ROOT/include
+  export LDFLAGS=-L$CUDA_ROOT/lib64
+fi
 
 # caffe
-export CAFFE_ROOT=$HOME/install/caffe
-export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$CAFFE_ROOT/build/lib
-export PYTHONPATH=$PYTHONPATH:$CAFFE_ROOT/python
+if [ -d  "$HOME/install/caffe" ]; then
+  export CAFFE_ROOT=$HOME/install/caffe
+  export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$CAFFE_ROOT/build/lib
+  export PYTHONPATH=$PYTHONPATH:$CAFFE_ROOT/python
+fi
 
 #LD_LIBRARY_PATH
-export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib
+if [[ $LD_LIBRARY_PATH = "" ]]; then
+  export LD_LIBRARY_PATH=/usr/local/lib
+else
+  export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib
+fi
 
 #neovim setting
 export XDG_CONFIG_HOME=~/.config
@@ -259,6 +267,9 @@ export PYTHONPATH=$HOME/pynaoqi/pynaoqi-python2.7-2.5.5.5-linux64/lib/python2.7/
 
 # rust
 export PATH=$PATH:$HOME/.cargo/bin
+
+# pypi
+export PYTHON_KEYRING_BACKEND=keyring.backends.null.Keyring
 
 # ros function
 rossetfetch15 () {
@@ -320,3 +331,5 @@ setup_rmui () {
 # Euslisp
 eussource
 echo "CMAKE_PREFIX_PATH: $CMAKE_PREFIX_PATH"
+echo "LD_LIBRARY_PATH: $LD_LIBRARY_PATH"
+

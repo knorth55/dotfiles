@@ -304,13 +304,13 @@ eussource () {
     export ARCHDIR=Linux64
     export CVSDIR=$HOME/install
     export PATH=$EUSDIR/$ARCHDIR/bin:$EUSDIR/$ARCHDIR/lib:$PATH
-    export LD_LIBRARY_PATH=$EUSDIR/$ARCHDIR/bin:$LD_LIBRARY_PATH
+    export LD_LIBRARY_PATH=$EUSDIR/$ARCHDIR/lib:$LD_LIBRARY_PATH
     echo "EUSDIR: $EUSDIR"
   elif [ -d "$HOME/projects/jskeus" ]; then
     export EUSDIR=$HOME/projects/jskeus/eus
     export ARCHDIR=Linux64
     export PATH=$EUSDIR/$ARCHDIR/bin:$EUSDIR/$ARCHDIR/lib:$PATH
-    export LD_LIBRARY_PATH=$EUSDIR/$ARCHDIR/bin:$LD_LIBRARY_PATH
+    export LD_LIBRARY_PATH=$EUSDIR/$ARCHDIR/lib:$LD_LIBRARY_PATH
     export CVSDIR=$HOME/projects
     echo "EUSDIR: $EUSDIR"
   fi

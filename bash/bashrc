@@ -320,12 +320,14 @@ setup_vive () {
   source $HOME/ros/vive_ws/devel/setup.bash
   eussource
   echo "CMAKE_PREFIX_PATH: $CMAKE_PREFIX_PATH"
+  echo "LD_LIBRARY_PATH: $LD_LIBRARY_PATH"
 }
 
 setup_rmui () {
   source $HOME/ros/rmui_ws/devel/setup.bash
   eussource
   echo "CMAKE_PREFIX_PATH: $CMAKE_PREFIX_PATH"
+  echo "LD_LIBRARY_PATH: $LD_LIBRARY_PATH"
 }
 
 # Euslisp

@@ -215,6 +215,8 @@ fi
 
 # brew
 export PATH=/opt/homebrew/bin:$PATH
+# force bash
+export SHELL=/bin/bash
 
 # caffe
 if [ -d  "$HOME/install/caffe" ]; then
@@ -234,6 +236,7 @@ fi
 export XDG_CONFIG_HOME=~/.config
 # alias_completion
 alias_completion
+
 # for not sudoer
 export PATH=$HOME/.local/bin:$PATH
 

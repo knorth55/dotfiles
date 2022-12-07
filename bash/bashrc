@@ -213,6 +213,9 @@ if [ -d  "/usr/local/cuda" ]; then
   export LDFLAGS=-L$CUDA_ROOT/lib64
 fi
 
+# brew
+export PATH=/opt/homebrew/bin:$PATH
+
 # caffe
 if [ -d  "$HOME/install/caffe" ]; then
   export CAFFE_ROOT=$HOME/install/caffe

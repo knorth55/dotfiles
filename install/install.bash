@@ -39,14 +39,15 @@ fi
 
 # percol
 if [ ! $(which "percol") ]; then
-  echo "[percol] sudo pip install percol"
-  sudo pip install percol
+  echo "[percol] brew install percol"
+  brew install gnu-sed
+  brew install percol
 fi
 
 # pycd
 if [ ! $(which "pycd") ]; then
-  echo "[pycd] sudo pip install pycd"
-  sudo pip install pycd
+  echo "[pycd] pip3 install pycd"
+  pip3 install pycd
 fi
 
 # bash_it

@@ -253,8 +253,6 @@ export ORBgiopMaxMsgSize=2097152000
 # firefox
 export MOZ_USE_XINPUT2=1
 
-source `which pycd.sh`
-
 if which activate.sh > /dev/null; then
   source `which activate.sh`
 fi

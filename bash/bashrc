@@ -119,13 +119,13 @@ percol-search-rostopic() {
 }
 bind -x '"\ep" : percol-search-rostopic'
 
-#travis percol history search
-percol-search-travis-history() {
-    local l=$(travis history --limit 20 | percol | sed -e "s/#\([0-9]\+\).*/\1/g")
-    READLINE_LINE="$READLINE_LINE$l"
-    READLINE_POINT=${#READLINE_LINE}
-}
-bind -x '"\eo" :percol-search-travis-history'
+# #travis percol history search
+# percol-search-travis-history() {
+#     local l=$(travis history --limit 20 | percol | sed -e "s/#\([0-9]\+\).*/\1/g")
+#     READLINE_LINE="$READLINE_LINE$l"
+#     READLINE_POINT=${#READLINE_LINE}
+# }
+# bind -x '"\eo" :percol-search-travis-history'
 
 # anaconda
 activate () {
@@ -165,7 +165,7 @@ export LESS_TERMCAP_so=$'\E[00;47;30m'
 export LESS_TERMCAP_ue=$'\E[0m'
 export LESS_TERMCAP_us=$'\E[01;32m'
 
-#lesspipe
+# #lesspipe
 if which lesspipe.sh > /dev/null; then
   export LESSOPEN='| /usr/bin/env lesspipe.sh %s 2>&-'
 fi
@@ -188,6 +188,7 @@ if [ -e "$HOME/ros/$ROS_DISTRO/devel/setup.bash" ]; then
   #rossetip
   rossetlocal
 fi
+export ROSCONSOLE_FORMAT='[${severity}] [${time}] [${node}:${logger}]: ${message}'
 
 export EDITOR='vim'
 
@@ -196,15 +197,15 @@ export GOROOT=/usr/local/go
 export GOPATH=$HOME/go
 export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
 
-#CUDA
-if [ -d  "/usr/local/cuda" ]; then
-  export CUDA_ROOT=/usr/local/cuda
-  # export CUDA_HOME=/usr/local/cuda
-  export PATH=$PATH:$CUDA_ROOT/bin
-  export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$CUDA_ROOT/lib64
-  export CFLAGS=-I$CUDA_ROOT/include
-  export LDFLAGS=-L$CUDA_ROOT/lib64
-fi
+# #CUDA
+# if [ -d  "/usr/local/cuda" ]; then
+#   export CUDA_ROOT=/usr/local/cuda
+#   # export CUDA_HOME=/usr/local/cuda
+#   export PATH=$PATH:$CUDA_ROOT/bin
+#   export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$CUDA_ROOT/lib64
+#   export CFLAGS=-I$CUDA_ROOT/include
+#   export LDFLAGS=-L$CUDA_ROOT/lib64
+# fi
 
 # caffe
 if [ -d  "$HOME/install/caffe" ]; then
@@ -235,6 +236,7 @@ export CNOID_INSTALL_DIR=/usr/local/choreonoid
 export CNOID_RTM_DIR=/opt/ros/$ROS_DISTRO
 export PKG_CONFIG_PATH=${CNOID_INSTALL_DIR}/lib/pkgconfig:$PKG_CONFIG_PATH
 export PATH=${CNOID_INSTALL_DIR}/bin:$PATH
+export ORBgiopMaxMsgSize=2097152000
 
 # firefox
 export MOZ_USE_XINPUT2=1
@@ -323,14 +325,8 @@ setup_vive () {
   echo "LD_LIBRARY_PATH: $LD_LIBRARY_PATH"
 }
 
-setup_rmui () {
-  source $HOME/ros/rmui_ws/devel/setup.bash
-  eussource
-  echo "CMAKE_PREFIX_PATH: $CMAKE_PREFIX_PATH"
-  echo "LD_LIBRARY_PATH: $LD_LIBRARY_PATH"
-}
-
 # Euslisp
+
 eussource
 echo "CMAKE_PREFIX_PATH: $CMAKE_PREFIX_PATH"
 echo "LD_LIBRARY_PATH: $LD_LIBRARY_PATH"

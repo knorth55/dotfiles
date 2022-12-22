@@ -17,3 +17,13 @@
     rebase = true
 [push]
     default = current
+[diff]
+    tool = difftastic
+[difftool]
+    prompt = false
+[difftool "difftastic"]
+    cmd = difft "$LOCAL" "$REMOTE"
+[pager]
+    difftool = true
+[alias]
+    difft = difftool

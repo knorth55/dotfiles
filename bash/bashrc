@@ -185,12 +185,13 @@ fi
 if [ -e "$HOME/ros/$ROS_DISTRO/devel/setup.bash" ]; then
   source ~/ros/$ROS_DISTRO/devel/setup.bash
   source `rospack find jsk_tools`/src/bashrc.ros
-  #rossetip
+  unalias git
   rossetlocal
 fi
 if [ -e "$HOME/gitai/catkin_ws/devel/setup.bash" ]; then
   source $HOME/gitai/catkin_ws/devel/setup.bash
   source `rospack find jsk_tools`/src/bashrc.ros
+  unalias git
   rossetlocal
 fi
 export ROSCONSOLE_FORMAT='[${severity}] [${time}] [${node}:${logger}]: ${message}'
@@ -336,3 +337,9 @@ eussource
 echo "CMAKE_PREFIX_PATH: $CMAKE_PREFIX_PATH"
 echo "LD_LIBRARY_PATH: $LD_LIBRARY_PATH"
 
+# BEGIN ANSIBLE MANAGED BLOCK
+export GIT_AUTHOR_NAME=$(git config --global --default '' --get user.name)
+export GIT_AUTHOR_EMAIL=$(git config --global --default '' --get user.email)
+export GIT_COMMITTER_NAME=$(git config --global --default '' --get user.name)
+export GIT_COMMITTER_EMAIL=$(git config --global --default '' --get user.email)
+# END ANSIBLE MANAGED BLOCK

@@ -48,7 +48,6 @@ alias rqt_reconfigure='rosrun rqt_reconfigure rqt_reconfigure'
 alias pbcopy='xsel --clipboard --input'
 alias pbpaste='xsel --clipboard --output'
 #git alias
-alias git="hub"
 # unalias gs
 alias gst="git status"
 alias gd="git diff"

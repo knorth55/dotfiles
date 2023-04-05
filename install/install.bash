@@ -7,7 +7,7 @@ cd $dotfiles_path
 # symbolic link
 eval ln -sf  $dotfiles_path/bash/bashrc ~/.bashrc
 eval ln -sf  $dotfiles_path/bash/bash_aliases ~/.bash_aliases
-# eval ln -sfn $dotfiles_path/bash_it ~/.bash_it
+eval ln -sfn $dotfiles_path/bash_it ~/.bash_it
 eval ln -sf  $dotfiles_path/git/gitconfig ~/.gitconfig
 eval ln -sf  $dotfiles_path/git/gitignore_global ~/.gitignore_global
 eval ln -sf  $dotfiles_path/vimrc ~/.vimrc
@@ -63,7 +63,7 @@ if [ ! $(which "pycd") ]; then
 fi
 
 # bash_it
-# cd $dotfiles_path
-# bash $dotfiles_path/install/install_bash_it.bash
+cd $dotfiles_path
+bash $dotfiles_path/install/install_bash_it.bash
 
 source ~/.bashrc

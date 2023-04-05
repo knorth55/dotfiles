@@ -27,3 +27,7 @@
     difftool = true
 [alias]
     difft = difftool
+[rebase]
+	autostash = true
+[url "https://github.com/"]
+	insteadOf = git://github.com/

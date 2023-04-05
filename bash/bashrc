@@ -133,16 +133,16 @@ activate () {
   source $HOME/.anaconda/bin/activate
 }
 
-#Bash-it
-# Path to the bash it configuration
-export BASH_IT="$HOME/.bash_it"
-
-# Lock and Load a custom theme file
-# location /.bash_it/themes/
-export BASH_IT_THEME='zork'
-
-# Load Bash It
-source $BASH_IT/bash_it.sh
+# #Bash-it
+# # Path to the bash it configuration
+# export BASH_IT="$HOME/.bash_it"
+# 
+# # Lock and Load a custom theme file
+# # location /.bash_it/themes/
+# export BASH_IT_THEME='zork'
+# 
+# # Load Bash It
+# source $BASH_IT/bash_it.sh
 
 # Alias definitions.
 # You may want to put all your additions into a separate file like
@@ -188,6 +188,11 @@ if [ -e "$HOME/ros/$ROS_DISTRO/devel/setup.bash" ]; then
   #rossetip
   rossetlocal
 fi
+if [ -e "$HOME/gitai/catkin_ws/devel/setup.bash" ]; then
+  source $HOME/gitai/catkin_ws/devel/setup.bash
+  source `rospack find jsk_tools`/src/bashrc.ros
+  rossetlocal
+fi
 export ROSCONSOLE_FORMAT='[${severity}] [${time}] [${node}:${logger}]: ${message}'
 
 export EDITOR='vim'
@@ -224,7 +229,7 @@ fi
 #neovim setting
 export XDG_CONFIG_HOME=~/.config
 # alias_completion
-alias_completion
+# alias_completion
 # for not sudoer
 export PATH=$HOME/.local/bin:$PATH
 

@@ -49,7 +49,7 @@ alias pbcopy='xsel --clipboard --input'
 alias pbpaste='xsel --clipboard --output'
 #git alias
 alias git="hub"
-unalias gs
+# unalias gs
 alias gst="git status"
 alias gd="git diff"
 alias gdca="git diff --cached"

@@ -230,7 +230,7 @@ fi
 #neovim setting
 export XDG_CONFIG_HOME=~/.config
 # alias_completion
-# alias_completion
+alias_completion
 # for not sudoer
 export PATH=$HOME/.local/bin:$PATH
 

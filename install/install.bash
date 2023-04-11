@@ -18,6 +18,7 @@ eval ln -sfn  $dotfiles_path/tmux ~/.tmux
 eval ln -sfn $dotfiles_path/percol.d ~/.percol.d
 eval ln -sf  $dotfiles_path/latex/latexmkrc ~/.latexmkrc
 eval ln -sf  $dotfiles_path/xinitrc ~/.xinitrc
+eval ln -sf  $dotfiles_path/Xmodmap ~/.Xmodmap
 
 rlwrap_path="$dotfiles_path/rlwrap"
 for filename in $(ls $rlwrap_path); do

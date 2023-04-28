@@ -149,7 +149,7 @@ let g:ros_make='current'
 
 "syntastic
 let g:syntastic_check_on_wq = 0
-let g:syntastic_python_checkers = ['flake8']
+let g:syntastic_python_checkers = ['pylint']
 let g:syntastic_yaml_checkers = ['yamllint']
 let g:syntastic_markdown_checkers = ['mdl']
 
@@ -170,7 +170,7 @@ let g:airline#extensions#branch#displayed_head_limit = 10
 let g:jedi#documentation_command = "K"
 autocmd FileType python setl omnifunc=jedi#completions
 autocmd FileType python setl completeopt-=preview
-let g:jedi#popup_on_dot = 0
+let g:jedi#popup_on_dot = 1
 let g:jedi#popup_select_first = 0
 let g:jedi#completions_enabled = 1
 let g:jedi#auto_vim_configuration = 1

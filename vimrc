@@ -76,10 +76,6 @@ nnoremap <silent> \uf :<C-u>UniteWithBufferDir -buffer-name=files file<CR>
 nnoremap <silent> \ur :<C-u>Unite -buffer-name=register register<CR>
 nnoremap <silent> \uu :<C-u>Unite file_mru buffer<CR>
 
-"VimShell settings
-"nmap vs :VimShell<CR>
-nmap vs :VimShellPop<CR>
-
 "yankround settings
 nmap p <Plug>(yankround-p)
 nmap P <Plug>(yankround-P)
@@ -89,41 +85,9 @@ nmap <C-p> <Plug>(yankround-prev)
 nmap <C-n> <Plug>(yankround-next)
 nmap pp :Unite yankround<CR>
 
-"neocomplete settings
-let g:neocomplete#enable_at_startup = 1
-let g:neocomplete#enable_ignore_case = 1
-let g:neocomplete#enable_smart_case = 1
-let g:neocomplete#enable_auto_select = 1
-let g:neocomplete#enable_auto_close_preview = 1
-let g:neocomplete#enable_ignore_case = 1
-let g:neocomplete#enable_enable_camel_case_completion = 0
-if !exists('g:neocomplete#keyword_patterns')
-    let g:neocomplete#keyword_patterns = {}
-endif
-let g:neocomplete#keyword_patterns._ = '\h\w*'
-let g:neocomplete#sources#dictionary#dictionaries = {
-    \ 'default' : '',
-    \ 'python' : '~/.vim/bundle/pydiction/complete-dict',
-    \ 'lisp' : '~/.vim/dicts/lisp.dict'
-    \ }
-
-imap <expr><C-g>     neocomplete#undo_completion()
-imap <expr><C-l>     neocomplete#complete_common_string()
-imap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
-imap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
-imap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
-
 "NERDTree setting
 nmap nt :NERDTree<CR>
 nmap nc :NERDTreeClose<CR>
-
-"quickrun setting
-nmap \rr :QuickRun<CR>
-vmap \rr :QuickRun<CR>
-
-"caw setting
-nmap <C-K> <Plug>(caw:hatpos:toggle)
-vmap <C-K> <Plug>(caw:hatpos:toggle)
 
 "FileType config
 au BufNewFile,BufRead *.l set filetype=lisp
@@ -132,24 +96,9 @@ au BufNewFile,BufRead *.scala set filetype=scala
 au BufNewFile,BufRead *.sbt set filetype=scala
 au BufNewFile,BufRead *.erb set filetype=ruby
 
-"Dict config
-au FileType lisp set dictionary='~/.vim/dicts/lisp.dict'
-au FileType python set dictionary='~/.vim/bundle/pydiction/complete-dict'
-
-"PyDiction
-let g:pydiction_location = '~/.vim/bundle/pydiction/complete-dict'
-
-"TwitVim config
-nmap cp :CPosttoTwitter<CR>
-
-"vim-ros config
-let g:ros_make='current'
-" let g:ros_build_system='catkin'
-" set makeprg=catkin\ build
-
 "syntastic
 let g:syntastic_check_on_wq = 0
-let g:syntastic_python_checkers = ['pylint']
+let g:syntastic_python_checkers = ['flake8']
 let g:syntastic_yaml_checkers = ['yamllint']
 let g:syntastic_markdown_checkers = ['mdl']
 
@@ -163,19 +112,37 @@ let g:airline#extensions#branch#enabled = 1
 let g:airline#extensions#branch#vcs_priority = ["git"]
 let g:airline#extensions#branch#displayed_head_limit = 10
 
-"jedi-vim
-"let g:jedi#completions_command = "<C-N>"
-"let g:jedi#rename_command = "<leader>rr"
-"let g:jedi#documentation_command = "<leader>k"
-let g:jedi#documentation_command = "K"
-autocmd FileType python setl omnifunc=jedi#completions
-autocmd FileType python setl completeopt-=preview
-let g:jedi#popup_on_dot = 1
-let g:jedi#popup_select_first = 0
-let g:jedi#completions_enabled = 1
-let g:jedi#auto_vim_configuration = 1
-let g:jedi#show_call_signatures = 0
-let g:jedi#rename_command = '<Leader>R'
+" ddc setting
+call ddc#custom#patch_global('ui', 'native')
+
+call ddc#custom#patch_global('sources', ['around', 'vim-lsp', 'file'])
+
+call ddc#custom#patch_global('sourceOptions', {
+  \ '_': {
+  \   'matchers': ['matcher_head'],
+  \   'sorters': ['sorter_rank'],
+  \   'converters': ['converter_remove_overlap'],
+  \ },
+  \ 'around': {'mark': 'Around'},
+  \ 'vim-lsp': {
+  \   'mark': 'LSP',
+  \   'matchers': ['matcher_head'],
+  \   'forceCompletionPattern': '\.|:|->|"\w+/*'
+  \ },
+  \ 'file': {
+  \   'mark': 'file',
+  \   'isVolatile': v:true, 
+  \   'forceCompletionPattern': '\S/\S*'
+  \ }})
+
+inoremap <silent><expr> <TAB>
+\ pumvisible() ? '<C-n>' :
+\ (col('.') <= 1 <Bar><Bar> getline('.')[col('.') - 2] =~# '\s') ?
+\ '<TAB>' : ddc#map#manual_complete()
+
+" inoremap <expr><S-TAB>  pumvisible() ? '<C-p>' : '<C-h>'
+
+call ddc#enable()
 
 "change molokai colorscheme
 highlight Normal ctermbg=None
@@ -191,4 +158,3 @@ highlight DiffAdd    cterm=bold ctermfg=10 ctermbg=22
 highlight DiffDelete cterm=bold ctermfg=10 ctermbg=52
 highlight DiffChange cterm=bold ctermfg=10 ctermbg=17
 highlight DiffText   cterm=bold ctermfg=10 ctermbg=21
-

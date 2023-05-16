@@ -99,6 +99,7 @@ au BufNewFile,BufRead *.erb set filetype=ruby
 "syntastic
 let g:syntastic_check_on_wq = 0
 let g:syntastic_python_checkers = ['flake8']
+let g:syntastic_python_flake8_args = '--max-line-length=100'
 let g:syntastic_yaml_checkers = ['yamllint']
 let g:syntastic_markdown_checkers = ['mdl']
 
@@ -143,6 +144,8 @@ inoremap <silent><expr> <TAB>
 " inoremap <expr><S-TAB>  pumvisible() ? '<C-p>' : '<C-h>'
 
 call ddc#enable()
+
+let g:lsp_diagnostics_enabled = 0
 
 "change molokai colorscheme
 highlight Normal ctermbg=None

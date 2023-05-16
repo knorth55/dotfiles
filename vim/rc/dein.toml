@@ -79,8 +79,8 @@ repo = 'Shougo/ddc-source-nvim-lsp'
 [[plugins]]
 repo = 'shun/ddc-source-vim-lsp'
 
-# [[plugins]]
-# repo = 'tyru/caw.vim'
+[[plugins]]
+repo = 'tyru/caw.vim'
 
 [[plugins]]
 repo = 'derekwyatt/vim-scala'
@@ -100,9 +100,8 @@ repo = 'vim-airline/vim-airline-themes'
 # [[plugins]]
 # repo = 'davidhalter/jedi-vim'
 
-# [[plugins]]
-# repo = 'rkulla/pydiction'
+[[plugins]]
+repo = 'rkulla/pydiction'
 
 [[plugins]]
 repo = 'lervag/vimtex'
-

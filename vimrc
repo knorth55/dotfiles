@@ -89,6 +89,10 @@ nmap pp :Unite yankround<CR>
 nmap nt :NERDTree<CR>
 nmap nc :NERDTreeClose<CR>
 
+"caw setting
+nmap <C-K> <Plug>(caw:hatpos:toggle)
+vmap <C-K> <Plug>(caw:hatpos:toggle)
+
 "FileType config
 au BufNewFile,BufRead *.l set filetype=lisp
 au BufNewFile,BufRead *.launch set filetype=xml
@@ -96,7 +100,14 @@ au BufNewFile,BufRead *.scala set filetype=scala
 au BufNewFile,BufRead *.sbt set filetype=scala
 au BufNewFile,BufRead *.erb set filetype=ruby
 
-"syntastic
+"Dict config
+au FileType lisp set dictionary='~/.vim/dicts/lisp.dict'
+au FileType python set dictionary='~/.vim/bundle/pydiction/complete-dict'
+
+"PyDiction
+let g:pydiction_location = '~/.vim/bundle/pydiction/complete-dict'
+
+-"syntastic
 let g:syntastic_check_on_wq = 0
 let g:syntastic_python_checkers = ['flake8']
 let g:syntastic_python_flake8_args = '--max-line-length=100'

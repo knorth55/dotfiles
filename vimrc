@@ -158,6 +158,17 @@ call ddc#enable()
 
 let g:lsp_diagnostics_enabled = 0
 
+"jedi-vim
+let g:jedi#documentation_command = "K"
+autocmd FileType python setl omnifunc=jedi#completions
+autocmd FileType python setl completeopt-=preview
+let g:jedi#popup_on_dot = 0
+let g:jedi#popup_select_first = 0
+let g:jedi#completions_enabled = 0
+let g:jedi#auto_vim_configuration = 1
+let g:jedi#show_call_signatures = 0
+let g:jedi#rename_command = '<Leader>R'
+
 "change molokai colorscheme
 highlight Normal ctermbg=None
 highlight LineNr ctermbg=None

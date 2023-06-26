@@ -96,6 +96,7 @@ vmap <C-K> <Plug>(caw:hatpos:toggle)
 "FileType config
 au BufNewFile,BufRead *.l set filetype=lisp
 au BufNewFile,BufRead *.launch set filetype=xml
+au BufNewFile,BufRead *.test set filetype=xml
 au BufNewFile,BufRead *.scala set filetype=scala
 au BufNewFile,BufRead *.sbt set filetype=scala
 au BufNewFile,BufRead *.erb set filetype=ruby

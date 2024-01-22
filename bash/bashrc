@@ -96,36 +96,36 @@ function share_history {
 PROMPT_COMMAND='share_history'
 shopt -u histappend
 
-#percol settings
+#peco settings
 
-#C-r: percol history search
-percol-search-history() {
+#C-r: peco history search
+peco-search-history() {
     if [[ `uname -s` == "Darwin" ]]; then
-        local l=$(HISTTIMEFORMAT= history | tail -r | gsed -e 's/^\s*[0-9]\+\s\+//' | percol --query "$READLINE_LINE")
+        local l=$(HISTTIMEFORMAT= history | tail -r | gsed -e 's/^\s*[0-9]\+\s\+//' | peco --query "$READLINE_LINE")
     else
-        local l=$(HISTTIMEFORMAT= history | tac | sed -e 's/^\s*[0-9]\+\s\+//' | percol --query "$READLINE_LINE")
+        local l=$(HISTTIMEFORMAT= history | tac | sed -e 's/^\s*[0-9]\+\s\+//' | peco --query "$READLINE_LINE")
     fi
     READLINE_LINE="$l"
     READLINE_POINT=${#l}
 }
-bind -x '"\C-r": percol-search-history'
+bind -x '"\C-r": peco-search-history'
 # C-x r: reverse-search-history
 bind '"\C-xr": reverse-search-history'
 # Esc-p : rostopic search
-percol-search-rostopic() {
-    local l=$(rostopic list | percol)
+peco-search-rostopic() {
+    local l=$(rostopic list | peco)
     READLINE_LINE="$READLINE_LINE$l"
     READLINE_POINT=${#READLINE_LINE}
 }
-bind -x '"\ep" : percol-search-rostopic'
+bind -x '"\ep" : peco-search-rostopic'
 
-# #travis percol history search
-# percol-search-travis-history() {
-#     local l=$(travis history --limit 20 | percol | sed -e "s/#\([0-9]\+\).*/\1/g")
+# #travis peco history search
+# peco-search-travis-history() {
+#     local l=$(travis history --limit 20 | peco | sed -e "s/#\([0-9]\+\).*/\1/g")
 #     READLINE_LINE="$READLINE_LINE$l"
 #     READLINE_POINT=${#READLINE_LINE}
 # }
-# bind -x '"\eo" :percol-search-travis-history'
+# bind -x '"\eo" :peco-search-travis-history'
 
 # anaconda
 activate () {

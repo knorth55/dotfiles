@@ -57,6 +57,12 @@ if [ ! $(which "percol") ]; then
   sudo pip install percol
 fi
 
+# peco
+if [ ! $(which "peco") ]; then
+  echo "[peco] sudo apt install peco"
+  sudo apt install peco
+fi
+
 # pycd
 if [ ! $(which "pycd") ]; then
   echo "[pycd] sudo pip install pycd"

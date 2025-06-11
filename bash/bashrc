@@ -100,6 +100,8 @@ shopt -u histappend
 
 #C-r: peco history search
 peco-search-history() {
+    local prev_term=${TERM}
+    export TERM=xterm
     if [[ `uname -s` == "Darwin" ]]; then
         local l=$(HISTTIMEFORMAT= history | tail -r | gsed -e 's/^\s*[0-9]\+\s\+//' | peco --query "$READLINE_LINE")
     else
@@ -107,25 +109,21 @@ peco-search-history() {
     fi
     READLINE_LINE="$l"
     READLINE_POINT=${#l}
+    export TERM=$prev_term
 }
 bind -x '"\C-r": peco-search-history'
 # C-x r: reverse-search-history
 bind '"\C-xr": reverse-search-history'
 # Esc-p : rostopic search
 peco-search-rostopic() {
+    local prev_term=${TERM}
+    export TERM=xterm
     local l=$(rostopic list | peco)
     READLINE_LINE="$READLINE_LINE$l"
     READLINE_POINT=${#READLINE_LINE}
+    export TERM=$prev_term
 }
 bind -x '"\ep" : peco-search-rostopic'
-
-# #travis peco history search
-# peco-search-travis-history() {
-#     local l=$(travis history --limit 20 | peco | sed -e "s/#\([0-9]\+\).*/\1/g")
-#     READLINE_LINE="$READLINE_LINE$l"
-#     READLINE_POINT=${#READLINE_LINE}
-# }
-# bind -x '"\eo" :peco-search-travis-history'
 
 # anaconda
 activate () {

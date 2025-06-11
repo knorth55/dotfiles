@@ -349,5 +349,6 @@ export GIT_COMMITTER_EMAIL=$(git config --global --default '' --get user.email)
 # END ANSIBLE MANAGED BLOCK
 #
 export AWS_PROFILE=gitai
+export AWS_CA_BUNDLE="/etc/ssl/certs/ca-certificates.crt"
 
 . "/home/knorth55/.deno/env"

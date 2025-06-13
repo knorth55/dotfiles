@@ -350,3 +350,4 @@ if [[ $(whoami) = "knorth55" ]]; then
   export AWS_PROFILE=gitai
   export AWS_CA_BUNDLE="/etc/ssl/certs/ca-certificates.crt"
 fi
+. "$HOME/.deno/env"

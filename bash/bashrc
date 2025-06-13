@@ -265,7 +265,7 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # Deno
-export DENO_INSTALL="/home/knorth55/.deno"
+export DENO_INSTALL="$HOME/.deno"
 export PATH="$DENO_INSTALL/bin:$PATH"
 
 # docui
@@ -345,8 +345,8 @@ export GIT_AUTHOR_EMAIL=$(git config --global --default '' --get user.email)
 export GIT_COMMITTER_NAME=$(git config --global --default '' --get user.name)
 export GIT_COMMITTER_EMAIL=$(git config --global --default '' --get user.email)
 # END ANSIBLE MANAGED BLOCK
-#
-export AWS_PROFILE=gitai
-export AWS_CA_BUNDLE="/etc/ssl/certs/ca-certificates.crt"
 
-. "/home/knorth55/.deno/env"
+if [[ $(whoami) = "knorth55" ]]; then
+  export AWS_PROFILE=gitai
+  export AWS_CA_BUNDLE="/etc/ssl/certs/ca-certificates.crt"
+fi

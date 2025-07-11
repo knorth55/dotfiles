@@ -105,3 +105,7 @@ repo = 'rkulla/pydiction'
 
 [[plugins]]
 repo = 'lervag/vimtex'
+
+[[plugins]]
+repo = 'ojroques/vim-oscyank'
+on_event = 'TextYankPost'

@@ -30,11 +30,18 @@ eval mkdir -p $dotfiles_path/nvim/colors
 eval curl -s https://raw.githubusercontent.com/tomasr/molokai/master/colors/molokai.vim -o $dotfiles_path/vim/colors/molokai.vim 
 eval curl -s https://raw.githubusercontent.com/tomasr/molokai/master/colors/molokai.vim -o $dotfiles_path/nvim/colors/molokai.vim 
 
-# # ccache
-# if [ ! $(which "ccache") ]; then
-#   echo "[ccache] sudo apt-get install ccache"
-#   sudo apt-get install -y ccache
-# fi
+# ccache
+if [ ! $(which "ccache") ]; then
+  echo "[ccache] sudo apt-get install ccache"
+  sudo apt-get install -y ccache
+fi
+
+# xsel
+if [ ! $(which "xsel") ]; then
+  echo "[xsel] sudo apt-get install xsel"
+  sudo apt-get install -y xsel
+fi
+
 
 # # pip
 # if [ $(dpkg -s "python-pip" &> /dev/null) ]; then
